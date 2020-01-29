@@ -1,16 +1,175 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:800|Roboto);
-
-body {
-  font-family: 'Roboto';
-  background-color: #f8f8f8;
-  color: #555;
+html {
+  font-family: Sans;
+  font-size: 1em;
+  color: #f8f8f8;
 }
 
-.city {
+input{
+  margin-left: 0px;
+  padding-left: 0px;
+  color: #222;
+}
+
+.functions-box {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+  padding: 10px;
+  color: #222;
+}
+
+.functions-box select {
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-right: 5px;
+  color: #222;
+  background-color: rgba(85,85,85,0.2);
+  border: none;
+}
+
+.filter-box {
+  padding-right: 10px;
+}
+
+.input-box {
+  background: none;
+  margin-right: 10px;
+  border: 0px;
+  border-bottom: 1px solid;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 180px);
+  grid-auto-rows: 180px;
+  grid-gap: 10px;
+	width: 100%;
+  justify-content: center;
+  grid-auto-flow: dense;
+}
+
+.main-box {
+  display: flex;
+  justify-content: center;
+	align-items: center;
+  //background-color: rgba(255, 0, 0, 0.2);
+}
+
+
+@media only screen and (min-width: 1000px) {
+	.main-box .img{
+	  display: block;
+	}
+
+	.main-box #book-info {
+	  display: none;
+	}
+
+	.main-box:hover .img{
+	  display: none;
+	}
+
+	.main-box:hover #book-info {
+	  display: flex;
+	}
+}
+
+.img {
+	height: 180px;
+  max-width: 160px;
+  background-size: cover;
+	display: none;
+  margin: auto;
+	opacity: 1;
+}
+
+#book-info {
+  background-color: #555;
+	color: #f8f8f8;
+  width: 100%;
+  height: 180px;
+  display: flex;
+	flex-direction: column;
+	justify-content: center;
+  margin: auto;
+  margin-left: 0px;
+  overflow: hidden;
+}
+
+#book-info p, #book-info h4 {
+  padding-left: 4px;
+  padding-right: 2px;
+  margin-top: 0px;
+  margin-bottom: 6px;
+}
+
+#main-box-title {
+  font-weight: bold;
+}
+
+/* The Modal (background) */
+.modal {
+	/* Hidden by default */
+  display: grid;
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100vw; /* Full width */
+	height: 100vh; /* Full height */
+
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.94); /* Black w/ opacity */
+}
+
+.modal-table {
+	display: flex;
+	justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.modal-cell {
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.icon {
-  width: 50px;
+/* Modal Content (Image) */
+.modal-content {
+  margin-bottom: 5px;
+  height: 30vh;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  max-height: 50vh;
+  width: 80vw;
+  max-width: 550px;
+  overflow-y: auto;
+}
+
+.caption p {
+  display: block;
+	/* margin-bottom: 5px; */
+	text-align: left;
+	color: #f8f8f8;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, .caption {
+	animation-name: zoom;
+	animation-duration: 0.5s;
+}
+
+@keyframes zoom {
+	from {opacity: 0;}
+	to {opacity: 1;}
 }
