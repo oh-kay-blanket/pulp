@@ -137,10 +137,26 @@ input{
   align-items: center;
 }
 
+@media only screen and (min-width: 600px) {
+  .modal-cell {
+  	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 /* Modal Content (Image) */
 .modal-content {
   margin-bottom: 5px;
   height: 30vh;
+}
+
+@media only screen and (min-width: 600px) {
+  .modal-content {
+    min-height: 400px;
+    max-height: 700px;
+  }
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -154,6 +170,13 @@ input{
   width: 80vw;
   max-width: 550px;
   overflow-y: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .caption {
+    margin-left: 18px;
+    max-height: 700px;
+  }
 }
 
 .caption p {
