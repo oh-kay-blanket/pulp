@@ -1,7 +1,25 @@
+@import url(https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;500&display=swap);
+
 html {
-  font-family: Sans;
+  font-family: 'Libre Baskerville', serif;
   font-size: 1em;
-  color: #f8f8f8;
+  font-weight: 400;
+  color: #333;
+  background-color: #f6f6f6;
+}
+
+h1 {
+  margin: 0px auto;
+  font-size: 5em;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+}
+
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 7em;
+  }
 }
 
 input{
@@ -24,7 +42,7 @@ input{
   padding-left: 0px;
   margin-right: 5px;
   color: #222;
-  background-color: rgba(85,85,85,0.2);
+  background-color: rgba(85,85,85,0.1);
   border: none;
 }
 
@@ -53,7 +71,6 @@ input{
   display: flex;
   justify-content: center;
 	align-items: center;
-  //background-color: rgba(255, 0, 0, 0.2);
 }
 
 
@@ -85,8 +102,6 @@ input{
 }
 
 #book-info {
-  background-color: #555;
-	color: #f8f8f8;
   width: 100%;
   height: 180px;
   display: flex;
@@ -119,8 +134,8 @@ input{
 	width: 100vw; /* Full width */
 	height: 100vh; /* Full height */
 
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.94); /* Black w/ opacity */
+	background-color: rgb(246,246,246); /* Fallback color */
+	background-color: rgba(246,246,246,0.97); /* Black w/ opacity */
 }
 
 .modal-table {
@@ -183,7 +198,7 @@ input{
   display: block;
 	/* margin-bottom: 5px; */
 	text-align: left;
-	color: #f8f8f8;
+	color: #333;
 }
 
 /* Add Animation - Zoom in the Modal */

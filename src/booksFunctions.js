@@ -88,9 +88,7 @@ const handleSort = (books, sortDirection) => {
   }
 }
 
-const getQuote = quote => {
-  return (quote === '' ? '' : <p><b>Favorite Quote:</b> {quote}</p>)
-};
+const getQuote = quote => quote && <p><b>Favorite Quote:</b> {quote}</p>;
 
 const getGrade = grade => {
   grade = +grade;

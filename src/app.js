@@ -23,6 +23,7 @@ const App = ({ bookList }) => {
 
   return(
     <>
+      <h1>pulp</h1>
       <FunctionsBox
         filterType={filterType}
         setFilterType={setFilterType}

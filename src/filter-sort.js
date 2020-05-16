@@ -59,12 +59,12 @@ const SortBox = ({ sortDirection, setSort }) => {
     <div className='sort-box'>
       <p><b>Sort by </b>
         <select onChange={handleChange}>
-          <option value='rd-dsc'>Year Read (desc)</option>
-          <option value='rd-asc'>Year Read (asc)</option>
-          <option value='gr-dsc'>Rating (desc)</option>
-          <option value='gr-asc'>Rating (asc)</option>
-          <option value='yr-dsc'>Year Published (desc)</option>
-          <option value='yr-asc'>Year Published (asc)</option>
+          <option value='rd-dsc'>Year Read &#8595;</option>
+          <option value='rd-asc'>Year Read &#8593;</option>
+          <option value='gr-dsc'>Rating &#8595;</option>
+          <option value='gr-asc'>Rating &#8593;</option>
+          <option value='yr-dsc'>Year Published &#8595;</option>
+          <option value='yr-asc'>Year Published &#8593;</option>
         </select>
       </p>
     </div>
