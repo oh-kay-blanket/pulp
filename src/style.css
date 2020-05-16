@@ -38,6 +38,12 @@ input{
   color: #222;
 }
 
+@media only screen and (min-width: 600px) {
+  .functions-box {
+    margin: 15px 0px;
+  }
+}
+
 .functions-box select {
   margin-left: 0px;
   padding-left: 0px;
@@ -69,6 +75,7 @@ input{
 }
 
 .main-box {
+  position: relative;
   display: flex;
   justify-content: center;
 	align-items: center;
@@ -81,15 +88,16 @@ input{
 	}
 
 	.main-box #book-info {
-	  display: none;
+	  opacity: 0;
+    position: absolute;
 	}
 
 	.main-box:hover .img{
-	  display: none;
+	  opacity: 0.08;
 	}
 
 	.main-box:hover #book-info {
-	  display: flex;
+	  opacity: 1;
 	}
 }
 
