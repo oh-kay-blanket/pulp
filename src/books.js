@@ -41,7 +41,7 @@ const MainBox = ({ book, setModalId }) => {
 
   return(
     <div className='main-box' onClick={divClick}>
-      <img className='img' alt='' src={imageSource}></img>
+      <img className='img' loading="lazy" alt='' src={imageSource}></img>
       <div id='book-info'>
         <p id="main-box-title">{book.title}</p>
         <p><i>{book.author}</i></p>
