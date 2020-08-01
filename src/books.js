@@ -64,7 +64,7 @@ const ModalWindow = ({ book, modalId, setModalId }) => {
     <div className='modal' id={modalDivId}>
       <div className="modal-table" onClick={divClick}>
         <div className="modal-cell">
-          <img className="modal-content" alt='' src={imageSource} id={imageId}></img>
+          <img className="modal-content" loading="lazy" alt='' src={imageSource} id={imageId}></img>
           <div className="caption">
             <p><b>Title:</b> {book.title}</p>
             <p><b>Author:</b> {book.author}</p>
