@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
+import App from './App';
 
-import './style.css';
+import './scss/style.scss';
 import bookList from './books.csv';
 
 ReactDOM.render(
