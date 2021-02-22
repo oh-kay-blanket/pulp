@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 
-const FunctionsBox = ({ filterType, setFilterType, filterInput, setFilterInput, sortDirection, setSort }) => {
+const FunctionsBox = ({ filterType, setFilterType, filterInput, setFilterInput, sortDirection, setSort, gridView, setGridView }) => {
 
   return(
     <div className='functions-box'>
@@ -14,6 +14,15 @@ const FunctionsBox = ({ filterType, setFilterType, filterInput, setFilterInput, 
         sortDirection={sortDirection}
         setSort={setSort}
       />
+      <div className="display-select">
+          <div className={gridView && `active`} onClick={() => setGridView(true)}>
+            <i className="fa fa-th-large"></i>
+          </div>
+
+          <div className={!gridView && `active`} onClick={() => setGridView(false)}>
+            <i className="fa fa-list"></i>
+          </div>
+        </div>
     </div>
   )
 }
