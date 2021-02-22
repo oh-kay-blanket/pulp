@@ -88,11 +88,11 @@ const handleSort = (books, sortDirection) => {
   }
 }
 
-const getQuote = quote => quote && <p><b>Favorite Quote:</b> {quote}</p>;
+const getQuote = quote => quote && <p className="modal__quote">"{quote}"</p>;
 
 const getGrade = grade => {
   grade = +grade;
-  return (grade === 0 ? '' : <p><b>Rating:</b> {grade.toPrecision(2)}</p>)
+  return (grade === 0 ? '' : grade.toPrecision(2))
 };
 
 
