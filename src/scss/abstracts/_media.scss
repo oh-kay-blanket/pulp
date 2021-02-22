@@ -1,0 +1,78 @@
+$bp-mobile-tiny: 320px;
+$bp-mobile-standard: 370px;
+$bp-mobile-max: 544px; //min 545px for desktop
+$bp-desktop-small: 545px; //max 544px for mobile
+$bp-tablet: 769px; //max 768px
+$bp-desktop-medium: 992px; //max 991px
+$bp-desktop-large: 1200px; //max 1199px
+$bp-desktop-max: 1320px;
+
+//$size: strings ["medium", "large", "max", "tablet"] or PX value as min-width. Defaults to 545px.
+@mixin desktop($size: $bp-desktop-small) {
+    @if ($size == "medium") {
+        @media (min-width: $bp-desktop-medium) {
+            @content;
+        }
+    } @else if ($size == "large") {
+        @media (min-width: $bp-desktop-large) {
+            @content;
+        }
+    } @else if ($size == "max") {
+        @media (min-width: $bp-desktop-max) {
+            @content;
+        }
+    } @else if ($size == "tablet") {
+        @media (min-width: $bp-desktop-max) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $size) {
+            @content;
+        }
+    }
+}
+
+//$size: PX value as min-width. Defaults to 769px.
+@mixin tablet($size: $bp-tablet) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+//$size: strings ["tiny", "standard"] or PX Value as max-width. Defaults to 544px.
+@mixin mobile($size: $bp-mobile-max) {
+    @if ($size == "tiny") {
+        @media (max-width: $bp-mobile-standard) {
+            @content;
+        }
+    } @if ($size == "standard") {
+        @media (max-width: $bp-mobile-max) and (min-width: $bp-mobile-standard) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $size) {
+            @content;
+        }
+    }
+}
+
+//$min: PX value as min-width.
+@mixin min($min) {
+    @media (min-width: $min) {
+        @content;
+    }
+}
+
+//$max: PX value as max-width.
+@mixin max($max) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+//($min, $max) PX values as min-width and max-width.
+@mixin minmax($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
