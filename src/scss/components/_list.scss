@@ -1,0 +1,59 @@
+@use 'abstracts/media';
+@use 'base/var' as *;
+@use 'mixins/neumorph';
+
+/* LIST */
+.item-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 9px;
+  width: 80vw;
+  height: 40px;
+  cursor: pointer;
+  @include neumorph.neumorph-hover;
+  padding: 5px 2px;
+  background-color: $paper--dark;
+  border-top: 1px solid $paper--darker;
+  border-bottom: 1px solid $paper--darker;
+
+  @include media.desktop {
+    width: 320px;
+    height: 50px;
+  }
+
+  &:hover {
+    @include neumorph.neumorph;
+    padding: 5px 2px;
+    border-top: 1px solid $paper--darker;
+    border-bottom: 1px solid $paper--darker;
+  }
+
+  &:active {
+    // @include neumorph.neumorph-active;
+  }
+
+  h3, p {
+    margin: 0; 
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+  
+  p {
+    font-size: 14px;
+    opacity: 0.75;
+  }
+}

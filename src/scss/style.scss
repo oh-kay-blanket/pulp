@@ -1,0 +1,32 @@
+@use 'abstracts/media';
+@use 'base/base';
+@use 'mixins/neumorph';
+@use 'components/filter';
+@use 'components/grid';
+@use 'components/list';
+@use 'components/modal';
+
+
+/* Modal Content (Image) */
+.modal-content {
+  margin-bottom: 5px;
+  height: 30vh;
+}
+
+@media only screen and (min-width: 600px) {
+  .modal-content {
+    min-height: 400px;
+    max-height: 700px;
+  }
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, .caption {
+	animation-name: zoom;
+	animation-duration: 0.5s;
+}
+
+@keyframes zoom {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
