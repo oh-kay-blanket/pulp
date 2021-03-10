@@ -1,4 +1,6 @@
 id	image	title	subtitle	grade	yearRead	yearOrder	description	quote	genre	published	author	format	Prior-reads
+182	x	The Complete Sherlock Holmes		9.2	2021	3	Sherlock is truly the first superhero—and the best.	The game is afoot.	Mystery, Fiction	1887 - 1917	Sir Arthur Conan Doyle	audio	
+181	x	Sucker's Portfolio		6.4	2021	2	I bet Vonnegut would give this an even lower grade.		Science Fiction	2013	Kurt Vonnegut		
 180	x	The Trial		8.3	2021	1	I'm not sure what happened. I knew, but then things changed.	Next time I come here," he said to himself, "I must either bring sweets with me to make them like me or a stick to hit them with.	Fiction	1925	Franz Kafka		
 179	x	Mythos		8.6	2020	5	I've not read another survey of Greek mythology, but if I did I bet it wouldn't be as good as this. 	Gaia visited her daughter Mnemosyne, who was busy being unpronounceable.	History, Myth	2017	Stephen Fry	audio	
 178	x	Consider the Lobster		8.2	2020	4	He gets into it. He really gets into it.	Truly decent, innocent people can be taxing to be around.	Essay, Analysis	2005	David Foster Wallace	audio	
@@ -52,42 +54,42 @@ id	image	title	subtitle	grade	yearRead	yearOrder	description	quote	genre	publish
 129	x	It		8.7	2017	9	The only thing to fear is alien clowns in the drains.		horror literature	1986	Stephen King		
 128	x	Fahrenheit 451		8.4	2017	8	A fireman becomes interested in knowing what's in the bible.	He felt his smile slide away, melt, fold over, and down on itself like a tallow skin, like the stuff of a fantastic candle burning too long and now collapsing and now blown out. Darkness. He was not happy. He was not happy. He said the words to himself. He recognized this as the true state of affairs. He wore his happiness like a mask and the girl had run off across the lawn with the mask and there was no way of going to knock on her door and ask for it back.	dystopian novel	1953	Ray Bradbury		
 127	x	The Secret History of Twin Peaks		8.8	2017	7	From the tribes that settled in TP before it was called that, to Louis & Clark, to UFO's and Kennedy; it's all connected.		epistolary novel	2016	Mark Frost		
-126	x	American Gods		8.6	2017	6	What if immigrants brought their gods with them to America and the gods fought in a giant Battle Royale		Science fiction novel	2001	Neil Gaiman		
+126	x	American Gods		8.6	2017	6	What if immigrants brought their gods with them to America and the gods fought in a giant Battle Royale		Science fiction	2001	Neil Gaiman		
 124	x	The Tale of Beren and Lúthien		8.7	2017	4	If you thought the story of Aragorn and Arwen was romantic, wait till you get a load of this.		Fantasy	2017	J.R.R. Tolkien		
 123	x	The Wonderful Wizard of Oz		9	2017	3	A young girl sees in color for the first time.		Children's novel	1900	L. Frank Baum		
 122	x	The Futurist Cookbook		7.4	2017	2	Did you know Fascism has its own cuisine?		Cookbook	1932	Fillippo Tommaso Martinetti		
-121	x	Cinder		7.1	2017	1	Cinderella...IN SPACE!		science fiction novel	2012	Marissa Meyer		
-120	x	The Diary of a Young Girl		9.2	2016	29	The Holocaust was unbelievably horrible.		world literature	1947	Anne Frank		
-119	x	The Adventures of Pinocchio		8.2	2016	28	A marionette comes to life and gets into lots of trouble.		fiction literature	1883	Carlo Collodi		
+121	x	Cinder		7.1	2017	1	Cinderella...IN SPACE!		Science fiction	2012	Marissa Meyer		
+120	x	The Diary of a Young Girl		9.2	2016	29	The Holocaust was unbelievably horrible.		Memoir	1947	Anne Frank		
+119	x	The Adventures of Pinocchio		8.2	2016	28	A marionette comes to life and gets into lots of trouble.		Fiction literature	1883	Carlo Collodi		
 118	x	A Supposedly Fun Thing I'll Never Do Again		8.7	2016	27	Short essays from a great mind.		Non-fiction	1997	David Foster Wallace		
-117	x	James and the Giant Peach		7.9	2016	26	A boy finds bugs growing inside an oversized stone fruit.		children's literature	1961	Roald Dahl		
-116	x	Welcome to the Monkey House		8.2	2016	25	Billy the Poet, a drug free 'Nothinghead', kidnaps a woman and convinces her to stop taking her government mandated 'ethical birth control' pills.		science fiction literature	1968	Kurt Vonnegut Jr		
-115	x	The God Delusion		7.7	2016	24	A pretentious jerk makes good points.		philosophy	2006	Richard Dawkins		
+117	x	James and the Giant Peach		7.9	2016	26	A boy finds bugs growing inside an oversized stone fruit.		Children's literature	1961	Roald Dahl		
+116	x	Welcome to the Monkey House		8.2	2016	25	Billy the Poet, a drug free 'Nothinghead', kidnaps a woman and convinces her to stop taking her government mandated 'ethical birth control' pills.		Science fiction	1968	Kurt Vonnegut Jr		
+115	x	The God Delusion		7.7	2016	24	A pretentious jerk makes good points.		Philosophy	2006	Richard Dawkins		
 114	x	Patience		7.8	2016	23	Time travel, revenge, and beautiful imagery.		Science-fiction graphic novel	2016	Daniel Clowes		
 113	x	Hell's Angels		8.4	2016	22	Gonzo journalism with a biker gang.		Gonzo journalism	1967	Hunter S. Thompson		
 112	x	A Clockwork Orange		8.8	2016	21	The exploits of ultra-violent youth in a dystopian near future. Also the reason eggs are now called 'eggie weggies'.	Civilized my syphilised yarbles.	dystopian novel	1962	Anthony Burgess		
 111	x	The Sound and the Fury		9.2	2016	20	The slow downfall of an old money, white, southern family.		Southern Gothic	1929	William Faulkner		
 110	x	Nineteen Eighty-Four		9.5	2016	19	Don't read if you hate rats!		dystopian novel	1949	George Orwell		
-109	x	Mostly Harmless		8.7	2016	18	Arthur discovers his talent for making sandwiches and Earth is destroyed.		science fiction novel	1992	Douglas Adams		
-108	x	So Long, and Thanks for All the Fish		8.9	2016	17	Arthur reads God's final message to its creation.		science fiction novel	1984	Douglas Adams		
-107	x	Life, the Universe and Everything		9	2016	16	Arthur learns about the history of Cricket.		science fiction novel	1982	Douglas Adams		
-106	x	The Restaurant at the End of the Universe		9.2	2016	15	Arthur considers having the beef for dinner.		science fiction novel	1980	Douglas Adams		
-105	x	The Hitchhiker's Guide to the Galaxy		9.1	2016	14	Arthur learns the meaning of life, the universe and everything.		science fiction novel	1979	Douglas Adams		
+109	x	Mostly Harmless		8.7	2016	18	Arthur discovers his talent for making sandwiches and Earth is destroyed.		Science fiction	1992	Douglas Adams		
+108	x	So Long, and Thanks for All the Fish		8.9	2016	17	Arthur reads God's final message to its creation.		Science fiction	1984	Douglas Adams		
+107	x	Life, the Universe and Everything		9	2016	16	Arthur learns about the history of Cricket.		Science fiction	1982	Douglas Adams		
+106	x	The Restaurant at the End of the Universe		9.2	2016	15	Arthur considers having the beef for dinner.		Science fiction	1980	Douglas Adams		
+105	x	The Hitchhiker's Guide to the Galaxy		9.1	2016	14	Arthur learns the meaning of life, the universe and everything.		Science fiction	1979	Douglas Adams		
 104	x	The Woman in Black		7.4	2016	13	A ghost haunts a young man.		gothic literature	1983	Susan Hill		
-103	x	Charlie and the Great Glass Elevator		7.5	2016	12	There is a good reason this wonderful clusterfuck was not made into a film.		children's literature	1972	Roald Dahl		
-102	x	Charlie and the Chocolate Factory		8.9	2016	11	The story we all know, in printed on candy.		children's literature	1964	Roald Dahl		
+103	x	Charlie and the Great Glass Elevator		7.5	2016	12	There is a good reason this wonderful clusterfuck was not made into a film.		Children's literature	1972	Roald Dahl		
+102	x	Charlie and the Chocolate Factory		8.9	2016	11	The story we all know, in printed on candy.		Children's literature	1964	Roald Dahl		
 101	x	Delusions of Gender		7.7	2016	10	She disproves many poorly executed scientific studies which claim that there are genetic differences between female and male brains.		Sex and intelligence	2010	Cordelia Fine		
 100	x	A Midsummer Night's Dream		9.2	2016	9	Marriage, faries, amateure actors, and a jackass.		Comedy	1596	William Shakespeare		
 99	x	The Silmarillion		8.8	2016	8	A dense history of middle earth, from the beginning up until the hobbit.		speculative fiction	1977	J.R.R. Tolkien		
-98	x	Frankenstein		9	2016	7	It's true, the book is better.		science fiction novel	1818	Mary Shelley		
+98	x	Frankenstein		9	2016	7	It's true, the book is better.		Science fiction	1818	Mary Shelley		
 97	x	The Pale King		9.2	2016	6	In an age of increasing automation, one tax official seeks to build a team of investigators with special powers.	To be, in a word, unborable.... It is the key to modern life. If you are immune to boredom, there is literally nothing you cannot accomplish.	Literary fiction	2011	David Foster Wallace		
 96	x	Free Culture		8.5	2016	5	Copyright law in America is bad for creativity and is controlled in large part by Disney.		non-fiction	2004	Lawrence Lessig		
-95	x	The Case for Socialism		6.4	2016	4	A dated argument for why Socialism and Marxist ideals are worthy of adhering to.		nonfiction	1990	Paul Foot		
+95	x	The Case for Socialism		6.4	2016	4	A dated argument for why Socialism and Marxist ideals are worthy of adhering to.		Non-fiction	1990	Paul Foot		
 94	x	The Grapes of Wrath		9	2016	3	When humans can't rely on the government or corporations to take care of them, they have to rely on other humans.		novel	1939	John Steinbeck		
 93	x	Bowie	A Biography	6.3	2016	2	A genderless alien comes to earth and emits strange, hypnotizing sounds for fifty years.		Biography	2016	Marc Spitz		
 92	x	Vertical Motion		7.4	2016	1	Short stories of surreal events in mundane spaces.		Surrealist Literature	2011	Can Xue		
 91	x	The Metamorphosis		8.7	2015	16	A man turns into a bug and his family is unsure of how to handle the situation.		Novella	1915	Franz Kafka		
-90	x	Matilda		8.5	2015	15	A very bright girl with special powers overcomes numerous mean adults.		children's literature	1988	Roald Dahl		
+90	x	Matilda		8.5	2015	15	A very bright girl with special powers overcomes numerous mean adults.		Children's literature	1988	Roald Dahl		
 89	x	Hangmen		8.8	2015	14	On the day the death penalty was banned, an out of work hangman may have just found one more job before he hangs up his noose forever.		Black comedy play	2015	Martin McDonagh		
 88	x	Adventures of Huckleberry Finn		9.2	2015	13	A poor boy and an escaped slave go on an adventure down the Mississippi River.		adventure novel	1885	Mark Twain		
 87	x	Through the Looking-Glass		8.9	2015	12	A young girl ingests a second large dose of LSD.		fantasy	1871	Lewis Carroll		
@@ -96,7 +98,7 @@ id	image	title	subtitle	grade	yearRead	yearOrder	description	quote	genre	publish
 84	x	And Then		7.9	2015	9	A young man is caught between Japanese and Western ideals at the turn of the 20th century.		Japanese literature	1909	Soseki Natsume		
 83	x	The Sun Also Rises		8	2015	8	In the aftermath of WWI, a group of artists wander Western Europe seeking peace, meaning, and thrills.		novel	1926	Ernest Hemingway		
 82	x	Modernist Cuisine: V.1	History & Fundamentals		2015	7	The history of science in cooking.		Cooking science	2011	Nathan Myhrvold		
-81	x	Cat's Cradle		9.2	2015	6	A small rogue Caribbean island with a quirky religion gains a weapon of total annihilation.		science fiction novel	1963	Kurt Vonnegut Jr		2012
+81	x	Cat's Cradle		9.2	2015	6	A small rogue Caribbean island with a quirky religion gains a weapon of total annihilation.		Science fiction	1963	Kurt Vonnegut Jr		2012
 80	x	As You Like It		9.6	2015	5	The pinnacle of Shakespeare's comedy.		Comedy	1603	William Shakespeare		
 79	x	Bicycle Diaries		7.1	2015	4	David Byrne travels the world with a bicycle.		Memoir	2010	David Byrne		
 78	x	Dracula		9.5	2015	3	No adaptation does a better job at telling this story than the book that started it all.	I sometimes think we must be all mad and that we shall wake to sanity in strait-waistcoats.	vampire novel	1897	Bram Stoker		
@@ -104,12 +106,12 @@ id	image	title	subtitle	grade	yearRead	yearOrder	description	quote	genre	publish
 76	x	Showa (1926-1939: A History of Japan)		7.9	2015	1	Historical manga telling of the build up to Japan's invasion of Manchuria from the perspective of a Japanese boy.		Historical manga	2013	Shigeru Mizuki		
 75	x	The Delicate Prey		8.7	2014	12	Tales of normal people in sordid situations.	When they had gone the Moungari fell silent, to wait through the cold hours for the sun that would bring first warmth, then heat, thirst, fire, visions. The next night he did not know where he was, did not feel the cold. The wind blew dust along the ground into his mouth as he sang.	Fiction	1950	Paul Bowles		
 74	x	Breakfast at Tiffany's		7.6	2014	11	The tale of a country girl Geisha living in 1940's Manhattan.		novella	1958	Truman Capote		
-73	x	Venus on the Half-Shell		7.2	2014	10	A pulp science fiction novel written by a fictional author found in the works of Kurt Vonnegut.		science fiction	1975	Kilgore Trout		
+73	x	Venus on the Half-Shell		7.2	2014	10	A pulp Science fiction written by a fictional author found in the works of Kurt Vonnegut.		science fiction	1975	Kilgore Trout		
 72	x	Post Office		7.7	2014	9	The detailed life of a slob and abuser who can barely hold it together.		autobiographical novel	1971	Charles Bukowski		
 71	x	Naked Lunch		8.4	2014	8	A dream state of drugs, sex, and undercover agents.		speculative fiction	1959	William S. Burroughs		
-70	x	Slaughterhouse-Five		9	2014	7	A semi-autobiographical story of sudden space-teleportation, near-death experiences, and passificism on the battlefield.		science fiction novel	1969	Kurt Vonnegut Jr		
+70	x	Slaughterhouse-Five		9	2014	7	A semi-autobiographical story of sudden space-teleportation, near-death experiences, and passificism on the battlefield.		Science fiction	1969	Kurt Vonnegut Jr		
 69	x	The Hobbit		9.1	2014	6	In a hole in the ground there lived a hobbit.		children's novel	1937	J.R.R. Tolkien		
-68	x	Bored of the Rings		6.2	2014	5	This ring, no other, is made by the Elves. Who'd pawn their own mother to get it themselves. Ruler of creeper, mortal and scallop, This is a sleeper that packs quite a wallop. If broken or busted it cannot be remade. If found, send to Sorhed. (The postage is prepaid.)		parody	1969	Henry N. Beard		
+68	x	Bored of the Rings		6.2	2014	5	It's a travesty, but sort of a funny one.	This ring, no other, is made by the Elves. Who'd pawn their own mother to get it themselves. Ruler of creeper, mortal and scallop, This is a sleeper that packs quite a wallop. If broken or busted it cannot be remade. If found, send to Sorhed. (The postage is prepaid.)	parody	1969	Henry N. Beard		
 67	x	On The Road		8.7	2014	4	Driving in cars and getting into trouble.		memoir	1957	Jack Kerouac		
 66	x	Singing Out	An Oral History of America's Folk Music Revivals	7.3	2014	3	Woody Guthrie was a real interesting person.		History	2010	David King Dunway		
 65	x	The Outsiders		6.8	2014	2	Greasy hair, switchblades, and leather jackets.		young adult literature	1967	S. E. Hinton		
@@ -119,11 +121,11 @@ id	image	title	subtitle	grade	yearRead	yearOrder	description	quote	genre	publish
 61	x	Watchmen		8.3	2013	17	A group of retired superheroes must reunite to save the world.		Graphic novel	1987	Alan Moore		
 60	x	Batman: The Killing Joke		8.9	2013	16	Some good Batman reading.		Graphic novel	1988	Alan Moore		
 59	x	The Autobiography of Benjamin Franklin		6.1	2013	15	He was smart, but also just a man.		Autobiography	1791	Benjamin Franklin		
-58	x	Galápagos		8.1	2013	14	A global financial crisis and near human-wide infertility allows the Galapagos to become an isolated island of evolution for the second time.		science fiction novel	1985	Kurt Vonnegut Jr		
+58	x	Galápagos		8.1	2013	14	A global financial crisis and near human-wide infertility allows the Galapagos to become an isolated island of evolution for the second time.		Science fiction	1985	Kurt Vonnegut Jr		
 57	x	Running the books		7.8	2013	13	A memoir of a prison librarian.		Memoir	2011	Avi Steinberg		
 56	x	The Phantom Tollbooth		8.7	2013	12	An unhappy boy gets stuck in a land of puns and tyranny.		fantasy novel	1961	Norton Juster		
 55	x	Switch Bitch		8.8	2013	11	4 stories of sex, murder, and conniving.		Adult short stories	1974	Roald Dahl		
-54	x	The Man Who Folded Himself		7.1	2013	10	A person time travels over and over and befriends many versions of themself.		science fiction novel	1973	David Gerrold		
+54	x	The Man Who Folded Himself		7.1	2013	10	A person time travels over and over and befriends many versions of themself.		Science fiction	1973	David Gerrold		
 53	x	Animal Farm		9.1	2013	9	The 1917 Russian Revolution with animals.		dystopian novel	1945	George Orwell		
 52	x	The Names		8.2	2013	8	A series of murders in Greece all seem to be connected by names.		novel	1982	Don DeLillo		
 51	x	Heart of Darkness		9.1	2013	7	One man travels into the jungle on a mission to find and kill another.		frame story	1899	Joseph Conrad		
@@ -144,21 +146,21 @@ id	image	title	subtitle	grade	yearRead	yearOrder	description	quote	genre	publish
 31	x	Whip Smart		8.2	2010	1	A former dominatrix tells her tale.		Memoir	2010	Melissa Febos		
 30	x	Sex, Drugs, and Cocoa Puffs	A Low Culture Manifesto	8	2009	3	Pop culture critique of the 00's.		Pop culture analysis	2003	Chuck Klosterman		
 29	x	The City of Dreaming Books		8.7	2009	1	A literature enthused dinosaur gets lost in an underworld of bizarre books.		fantasy novel	2004	Walter Moers		
-28	x	Flowers for Algernon		8.6	2008	1	A man with cognitive delay takes an experimental drug that makes him a genius.		science fiction novel	1959	Daniel Keyes		
+28	x	Flowers for Algernon		8.6	2008	1	A man with cognitive delay takes an experimental drug that makes him a genius.		Science fiction	1959	Daniel Keyes		
 27	x	Holidays on Ice		8.1	2007	7	The wacky life of an interesting human.		Memoir	1997	David Sedaris		
 26	x	The Great Deluge		7.4	2007	6	There were two tragedies involved with Hurricane Katrina: the hurricane and the government's response.		Non-fiction	2007	Douglas Brinkley		
-25	x	A Heartbreaking Work of Staggering Genius		7.1	2007	5	A writer has problems and an interesting life.		memoir	2000	Dave Eggers		
-24	x	Survivor		7.2	2007	4	An Amish-ish man becomes a religious pop icon.		novel	1999	Chuck Palahniuk		
-23	x	She Comes First			2007	3	A guide to going down.		nonfiction	2010	Ian kerner		
-22	x	The Demon-Haunted World		9	2007	1	Why I have no interest in religion.		essay	1995	Carl Sagan		
+25	x	A Heartbreaking Work of Staggering Genius		7.1	2007	5	A writer has problems and an interesting life.		Memoir	2000	Dave Eggers		
+24	x	Survivor		7.2	2007	4	An Amish-ish man becomes a religious pop icon.		Novel	1999	Chuck Palahniuk		
+23	x	She Comes First			2007	3	A guide to going down.		Non-fiction	2010	Ian kerner		
+22	x	The Demon-Haunted World		9	2007	1	Why I have no interest in religion.		Essay	1995	Carl Sagan		
 21	x	Me Talk Pretty One Day		8.6	2006	5	More hilarity from my favorite Billie Holiday impersonating writer.		Memoir	2000	David Sedaris		
 20	x	Eat, Pray, Love		8.3	2006	4	Travel inspiration material.		Memoir	2006	Elizabeth Gilbert		
 19	x	Django Reinheart		7.4	2006	3	The tale of a roaming guitar prodigy.		Biography	2006	Michael Dregni		
-18	x	The Little Prince		8.7	2006	2	A little person travels to Earth looking for answers.		children's novel	1943	Antoine de Saint-Exupéry		
-17	x	The Amazing Adventures of Kavalier & Clay		8.2	2006	1	Two boys grow up inspired by Harry Houdini.		superhero fiction	2000	Michael Chabon		
+18	x	The Little Prince		8.7	2006	2	A little person travels to Earth looking for answers.		Children's novel	1943	Antoine de Saint-Exupéry		
+17	x	The Amazing Adventures of Kavalier & Clay		8.2	2006	1	Two boys grow up inspired by Harry Houdini.		Superhero fiction	2000	Michael Chabon		
 16	x	Vintage Hughes			2005	3	Free jazz for poets.		Poetry	2004	Langston Hughes		
-15	x	The Catcher in the Rye		7.2	2005	2	Teenagers are jerks.		novel	1951	J. D. Salinger		
-14	x	Collapse	How Societies Choose to Fail or Succeed	7.9	2005	1	SPOILER ALERT: America is ripe for a downfall.		non-fiction	2005	Jared Diamond		
+15	x	The Catcher in the Rye		7.2	2005	2	Teenagers are jerks.		Novel	1951	J. D. Salinger		
+14	x	Collapse	How Societies Choose to Fail or Succeed	7.9	2005	1	SPOILER ALERT: America is ripe for a downfall.		Non-fiction	2005	Jared Diamond		
 13	x	Guns, Germs, and Steel		8.8	2004	2	Why Europeans colonized the 'new world' and not the other way around.		essay	1997	Jared Diamond		
 12	x	God's Debris		8.1	2004	1	God exploded itself and now it's putting itself back together.		novella	2001	Scott Adams		
 11	x	Brave New World		9.1	2003	1	Government exerts control through comfort.		dystopian novel	1932	Aldous Huxley		
@@ -168,7 +170,7 @@ id	image	title	subtitle	grade	yearRead	yearOrder	description	quote	genre	publish
 7	x	The Jungle			2001	1	How hot dogs are made.		political novel	1905	Upton Sinclair		
 6	x	Helter Skelter		7.9	1999	2	The Charles Manson trial, as told by the prosecutor.		true crime	1974	Vincent Bugliosi		
 5	x	The Shining		8.3	1999	1	A man locks himself and his family in a haunted hotel to help inspire him to finish writing his book.		thriller novel	1977	Stephen King		
-4	x	A Wrinkle in Time			1995	1	Time travel and witches.		fantasy	1963	Madeleine L'Engle		
-3	x	Where the Red Fern Grows			1994	1	A boy saves up to buy two dogs and they go on adventures.		novel	1961	Wilson Rawls		
+4	x	A Wrinkle in Time			1995	1	Time travel and witches.		Fantasy	1963	Madeleine L'Engle		
+3	x	Where the Red Fern Grows			1994	1	A boy saves up to buy two dogs and they go on adventures.		Novel	1961	Wilson Rawls		
 2	x	Where the Sidewalk Ends			1992	1	More poetry for dark, witty, and silly children and adults.		Poetry	1974	Shel Silverstein		
 1	x	A Light in the Attic			1991	1	Poetry for dark, witty, and silly children and adults.		Poetry	1981	Shel Silverstein		
