@@ -44,15 +44,14 @@ input{
     font-weight: bold;
     font-size: 1rem;
     border: none;
-    background-color: $paper--dark;
+    background-color: $paper;
   }
 }
 
 // FILTER & SORT BOX
 .filter-box, .sort-box {
   margin: 5px;
-  @include neumorph.neumorph;
-  background-color: $paper--dark;
+  background-color: $paper;
 
   p {
     margin: 5px;
@@ -94,31 +93,18 @@ input{
     width: 36px;
     height: 36px;
     font-size: 1.7rem;
-    @include neumorph.neumorph;
-    background-color: $paper--dark;
-
-    &:hover {
-      @include neumorph.neumorph-hover;
-    }
-
-    &:active {
-      @include neumorph.neumorph-active;
-    }
 
     &:focus {
       outline: none;
     }
 
+    i {
+      color: $ink--dry;
+    }
+
     &.active {
-      @include neumorph.neumorph-active;
-
-
-      &:hover {
-        @include neumorph.neumorph-active;
-      }
-
       i {
-        color: #000;
+        color: $ink;
       }
     }
   }

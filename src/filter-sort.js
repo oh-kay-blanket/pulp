@@ -39,7 +39,8 @@ const FilterBox = ({ filterType, setFilterType, filterInput, setFilterInput }) =
 
   return (
     <div className='filter-box'>
-      <p><b>Filter by </b>
+      <p>
+        <i className="fas fa-filter"></i>
         <select onChange={handleType}>
           <option value='author'>Author</option>
           <option value='title'>Title</option>
@@ -66,14 +67,15 @@ const SortBox = ({ sortDirection, setSort }) => {
 
   return (
     <div className='sort-box'>
-      <p><b>Sort by </b>
+      <p>
+        <i className="fas fa-sort"></i>
         <select onChange={handleChange}>
-          <option value='rd-dsc'>Year Read &#8595;</option>
-          <option value='rd-asc'>Year Read &#8593;</option>
+          <option value='rd-dsc'>Yr Read &#8595;</option>
+          <option value='rd-asc'>Yr Read &#8593;</option>
           <option value='gr-dsc'>Rating &#8595;</option>
           <option value='gr-asc'>Rating &#8593;</option>
-          <option value='yr-dsc'>Year Published &#8595;</option>
-          <option value='yr-asc'>Year Published &#8593;</option>
+          <option value='yr-dsc'>Yr Pub &#8595;</option>
+          <option value='yr-asc'>Yr Pub &#8593;</option>
         </select>
       </p>
     </div>

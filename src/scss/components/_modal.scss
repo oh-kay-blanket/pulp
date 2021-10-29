@@ -9,7 +9,7 @@
 	z-index: 1; /* Sit on top */
 	left: 0;
 	top: 0;
-	width: 100vw; /* Full width */
+	width: 100vw; /* Full width */ 
 	height: 100vh; /* Full height */
 	background-color: $paper--dark;
 
@@ -25,10 +25,10 @@
     position: relative;
 
     .modal-cell {
-      @include neumorph.neumorph;
-			background-color: $paper;
-      margin: 0px 15px;
-      padding: 15px;
+      // @include neumorph.neumorph;
+			// background-color: $paper;
+      // margin: 0px 15px;
+      // padding: 15px;
     	display: flex;
       flex-direction: column;
       justify-content: center;
@@ -48,21 +48,9 @@
         align-items: center;
         width: 30px;
         height: 30px;
-        @include neumorph.neumorph;
-				background-color: $paper;
+        // @include neumorph.neumorph;
         position: absolute;
         z-index: 2;
-        border-radius: 50%;
-
-        &:hover {
-          @include neumorph.neumorph-hover;
-          border-radius: 50%;
-        }
-
-				&:active {
-		      @include neumorph.neumorph-active;
-          border-radius: 50%;
-		    }
 
         &.icon-left {
           left: -65px;
