@@ -1,22 +1,22 @@
 @use 'base/var' as *;
 
 @mixin neumorph {
-  padding: 10px;
-  box-shadow: 4px 4px 6px $paper--shadow, -3px -3px 7px $paper--light;
-  border: none;
-  border-radius: $border-radius;
-  transition: $transition;
+    padding: 10px;
+    box-shadow: 4px 4px 6px $paper--shadow, -3px -3px 7px $paper--light;
+    border: none;
+    border-radius: $border-radius;
+    transition: $transition;
 }
 
 @mixin neumorph-hover {
-  padding: 10px;
-  box-shadow: 2px 2px 4px $paper--shadow, -2px -2px 4px $paper--light;
-  border-radius: $border-radius;
-  transition: $transition;
+    padding: 10px;
+    box-shadow: 2px 2px 4px $paper--shadow, -2px -2px 4px $paper--light;
+    border-radius: $border-radius;
+    transition: $transition;
 }
 
 @mixin neumorph-active {
-  box-shadow: inset 1px 1px 3px $paper--shadow, inset -1px -1px 3px $paper--light;
-  border-radius: $border-radius;
-  transition: $transition;
+    box-shadow: inset 1px 1px 3px $paper--shadow, inset -1px -1px 3px $paper--light;
+    border-radius: $border-radius;
+    transition: $transition;
 }

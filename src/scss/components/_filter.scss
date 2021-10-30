@@ -6,106 +6,106 @@
 /* FILTER */
 
 input{
-  font-family: 'Libre Baskerville', serif;
-  margin-left: 0px;
-  padding-left: 0px;
-  color: #222;
-}
-
-.functions-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0px;
-  padding: 10px;
-}
-
-.functions-box {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0px 0px 5px 0px;
-  padding: 10px 10px;
-  font-size: 1rem;
-
-  @include media.desktop {
-    justify-content: center;
-    align-items: center;
-    margin: 15px 0px 15px 0px;
-    padding: 20px 50px;
-  }
-
-  select {
+    font-family: 'Libre Baskerville', serif;
     margin-left: 0px;
     padding-left: 0px;
-    margin-right: 5px;
-    color: $ink;
-    font-weight: bold;
+    color: #222;
+}
+
+.functions-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+.functions-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0px 0px 5px 0px;
+    padding: 10px 10px;
     font-size: 1rem;
-    border: none;
-    background-color: $paper;
-  }
+
+    @include media.desktop {
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0px 15px 0px;
+        padding: 20px 50px;
+    }
+
+    select {
+        margin-left: 0px;
+        padding-left: 0px;
+        margin-right: 5px;
+        color: $ink;
+        font-weight: bold;
+        font-size: 1rem;
+        border: none;
+        background-color: $paper;
+    }
 }
 
 // FILTER & SORT BOX
 .filter-box, .sort-box {
-  margin: 5px;
-  background-color: $paper;
-
-  p {
     margin: 5px;
-  }
+    background-color: $paper;
+
+    p {
+        margin: 5px;
+    }
 }
 
 .filter-box {
-  padding-right: 10px;
-  text-align: center;
+    padding-right: 10px;
+    text-align: center;
 
-  input {
-    background: none;
-    margin-right: 10px;
-    width: 120px;
-    border: 0px;
-    border-bottom: 1px solid;
+    input {
+        background: none;
+        margin-right: 10px;
+        width: 120px;
+        border: 0px;
+        border-bottom: 1px solid;
 
-    &:focus {
-      outline: none;
+        &:focus {
+            outline: none;
+        }
     }
-  }
 }
 
 
 // DISPLAY
 .display-select {
-  display: flex;
-
-  @include media.desktop {
-    margin-left: 15px;
-  }
-
-  & > div {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 5px;
-    width: 36px;
-    height: 36px;
-    font-size: 1.7rem;
 
-    &:focus {
-      outline: none;
+    @include media.desktop {
+        margin-left: 15px;
     }
 
-    i {
-      color: $ink--dry;
-    }
+    & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin: 5px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.7rem;
 
-    &.active {
-      i {
-        color: $ink;
-      }
+        &:focus {
+            outline: none;
+        }
+
+        i {
+            color: $ink--dry;
+        }
+
+        &.active {
+            i {
+                color: $ink;
+            }
+        }
     }
-  }
 }

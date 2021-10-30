@@ -1,153 +1,168 @@
-@use 'abstracts/media';
+@use 'abstracts/media' as *;
 @use 'base/var' as *;
-@use 'mixins/neumorph';
-/* MODAL */
 
 .modal {
-  display: grid;
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100vw; /* Full width */ 
-	height: 100vh; /* Full height */
+    position: fixed; /* Stay in place */
+    display: flex;
+    align-items: center;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
 	background-color: $paper--dark;
 
-  &:hover {
-    cursor: pointer;
-  }
-
-  .modal-table {
-  	display: flex;
-  	justify-content: center;
-    align-items: center;
-    align-content: center;
-    position: relative;
-
-    .modal-cell {
-      // @include neumorph.neumorph;
-			// background-color: $paper;
-      // margin: 0px 15px;
-      // padding: 15px;
-    	display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      @include media.desktop {
-      	display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30px;
-        height: 30px;
-        // @include neumorph.neumorph;
-        position: absolute;
-        z-index: 2;
-
-        &.icon-left {
-          left: -65px;
-          @media (max-width: 1000px) {
-            display: none;
-          }
-        }
-
-        &.icon-right {
-          right: -65px;
-          @media (max-width: 1000px) {
-            display: none;
-          }
-        }
-
-        .fa-caret-left, .fa-caret-right {
-          text-align: center;
-          color: $ink;
-          font-size: 2rem;
-        }
-
-        &.icon-close {
-          top: -40px;
-          right: -25px;
-
-          @media (max-width: 1000px) {
-						top: -45px;
-            right: 0;
-          }
-
-          .fa-times {
-            font-size: 1.6rem;
-            color: $ink;
-          }
-        }
-      }
-
-      /* IMAGE */
-      img {
-        margin-bottom: 5px;
-				box-shadow: 3px 3px 6px $paper--dark, -3px -3px 15px $paper--light;
-        border-radius: $border-radius;
-
-        @include media.mobile {
-          height: 35vh;
-        }
-
-        @include media.desktop {
-          width: 350px;
-        }
-      }
-
-      /* MODAL TEXT */
-      .caption { 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin: auto;
-        max-height: 40vh;
-        width: 80vw;
-        max-width: 550px;
-        overflow-y: auto;
-
-        @media (min-width: 1000px) {
-          margin-left: 10px;
-          width: 450px;
-        }
-
-        h2, h3, h4, p {
-          // display: block;
-          margin: 6px 0px 6px;
-        	text-align: left;
-        	color: $ink;
-        }
-
-        .modal__subtitle {
-          font-weight: 200;
-        }
-
-        .modal__author {
-          font-weight: 400;
-        }
-        
-        .grade {
-          // opacity: 0.6;
-        }
-
-        .modal__genre {
-          font-style: italic;
-          color: $ink--dry;
-        }
-       
-        .modal__quote {
-          font-style: italic;
-          color: $ink--dry;
-        }
-      }
+    &.hidden {
+        display: none;
     }
-  }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .modal-table {
+    	width: 100vw;
+        position: relative;
+
+        @include desktop(medium) {
+                width: 80vw;
+                margin-left: 10vw;
+        }
+
+        .slick-arrow {
+            color: $ink--white;
+        }
+
+        .slick-prev, .slick-next {
+            background-color: transparent !important;
+            z-index: 2;
+            display: none;
+
+            @include desktop(medium) {
+                display: block;
+            }
+
+            &:before {
+                font-size: 2.2rem;
+            }
+        }
+
+        .slick-prev {
+            left: 0;
+        }
+
+        .slick-next {
+            right: 0;
+        }
+
+        .icon {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            color: $ink--white;
+            z-index: 2;
+            border-radius: 50%;
+            opacity: 1;
+            transition: opacity .25s;
+            z-index: 1;
+
+            &:hover {
+                opacity: .8;
+                transition: opacity .25s;
+            }
+
+            &.icon-close {
+                top: -20px;
+                right: 20px;
+                
+
+                @include desktop(medium) {
+                    top: -35px;
+                    right: -10px;
+                }
+
+                .fa-times {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .modal-cell {
+            position: relative;
+        	display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 15px;
+            // padding: 15px;
+
+            @include desktop(medium) {
+            	display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            img {
+                height: 55vw;
+                margin-bottom: 5px;
+
+                @include desktop {
+                    height: 55vh;
+                    margin: 0;
+                }
+            }
+
+            /* MODAL TEXT */
+            .caption { 
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                max-height: 35vh;
+                max-width: 80vw;
+                overflow-y: auto;
+
+                @include desktop(medium) {
+                    justify-content: center;
+                    max-height: 60vh;
+                    margin-left: 2em;
+                    max-width: 450px;
+                }
+
+                h2, h3, h4, p {
+                    // display: block;
+                    margin: 6px 0px 6px;
+                	text-align: left;
+                	color: $ink;
+                }
+
+                .modal__subtitle {
+                    font-weight: 200;
+                }
+
+                .modal__author {
+                    font-weight: 400;
+                }
+                
+                .grade {
+                    // opacity: 0.6;
+                }
+
+                .modal__genre {
+                    font-style: italic;
+                    color: $ink--dry;
+                }
+             
+                .modal__quote {
+                    font-style: italic;
+                    color: $ink--dry;
+                }
+            }
+        }
+    }
 }

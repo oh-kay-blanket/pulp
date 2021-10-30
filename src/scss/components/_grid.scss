@@ -5,98 +5,98 @@
 /* GRID */
 
 .item-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px auto;
-  justify-content: center;
-  grid-auto-flow: dense;
-
-  @include desktop {
-    max-width: 90%;
-  }
-  
-  .main-box {
-    position: relative;
     display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
     justify-content: center;
-    align-items: center;
-    margin: 2% 1%;
-    width: 30%;
+    grid-auto-flow: dense;
 
     @include desktop {
-      width: 200px;
-      margin: 1% auto;
-  
-      &:hover {
-        cursor: pointer;
-  
-        .img{
-          opacity: 0.28;
-          transition: $transition;
-        }
-  
-        .item-info {
-          opacity: 0.95;
-          transition: $transition;
-        }
-      }
+        max-width: 90%;
     }
-  
-    h2, h3, h4, p {
-      margin: 0px;
-    }
-  }
-
-  .img {
-    background-size: cover;
-    display: block;
-    margin: auto;
-    transition: $transition;
-    border-radius: $border-radius;
-    width: 100%;
     
-    @include desktop {
-      height: 200px;
-      width: auto;
+    .main-box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2% 1%;
+        width: 30%;
+        cursor: pointer;
+
+        @include desktop {
+            width: 200px;
+            margin: 1% 0;
+    
+            &:hover {
+    
+                .img{
+                    opacity: 0.28;
+                    transition: $transition;
+                }
+    
+                .item-info {
+                    opacity: 0.95;
+                    transition: $transition;
+                }
+            }
+        }
+    
+        h2, h3, h4, p {
+            margin: 0px;
+        }
     }
-    opacity: 1;
-  }
+
+    .img {
+        background-size: cover;
+        display: block;
+        margin: auto;
+        transition: $transition;
+        border-radius: $border-radius;
+        width: 100%;
+        
+        @include desktop {
+            height: 200px;
+            width: auto;
+        }
+        opacity: 1;
+    }
 }
 
 .item-info {
-  position: absolute;
-  display: flex;
+    position: absolute;
+    display: flex;
 	flex-direction: column;
 	justify-content: center;
-  align-items: center;
-  margin: auto;
-  overflow: hidden;
-  height: 100px;
-  opacity: 0;
-  background-color: $paper--dark;
-  transition: $transition;
-  padding: 5px;
-  border-radius: $border-radius;
-  text-align: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    height: 100px;
+    opacity: 0;
+    background-color: $paper--dark;
+    transition: $transition;
+    padding: 5px;
+    border-radius: $border-radius;
+    text-align: center;
 
-  @include desktop {
-    width: 160px;
-    height: 200px;
-  }
-  
-  p, h3 {
-    padding-left: 4px;
-    padding-right: 2px;
-    margin-top: 0px;
-    margin-bottom: 6px;
-  }
+    @include desktop {
+        width: 160px;
+        height: 200px;
+    }
+    
+    p, h3 {
+        padding-left: 4px;
+        padding-right: 2px;
+        margin-top: 0px;
+        margin-bottom: 6px;
+    }
 
-  .grade {
-    opacity: 0.66;
-    font-weight: 700;
-  }
+    .grade {
+        opacity: 0.66;
+        font-weight: 700;
+    }
 }
 
 .main-box-title {
-  font-weight: bold;
+    font-weight: bold;
 }
