@@ -17,6 +17,11 @@ body {
     }
 }
 
+#root {
+    overflow: hidden;
+    position: relative;
+}
+
 input, select {
     font-family: 'Libre Baskerville', serif;
     font-size: 1em;

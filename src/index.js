@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import './scss/style.scss';
-import bookList from './books.csv';
+import bookList from './books.json';
 
 ReactDOM.render(
     <App bookList={bookList} />,
