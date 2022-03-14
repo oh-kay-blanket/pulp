@@ -30,7 +30,11 @@
         }
 
         .slick-arrow {
-            color: $ink--white;
+            color: $ink;
+
+            &:before {
+                color: $ink;
+            }
         }
 
         .slick-prev, .slick-next {
@@ -62,7 +66,7 @@
             align-items: center;
             width: 30px;
             height: 30px;
-            color: $ink--white;
+            color: $ink;
             z-index: 2;
             border-radius: 50%;
             opacity: 1;
