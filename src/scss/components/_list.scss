@@ -23,8 +23,8 @@
     cursor: pointer;
     @include neumorph.neumorph-hover;
     padding: 5px 2px;
-    background-color: $paper--dark;
-    border-top: 1px solid $paper--darker;
+    background-color: $primary-light;
+    border-top: 1px solid $paper;
     border-bottom: 1px solid $paper--darker;
 
     @include media.desktop {
@@ -35,7 +35,7 @@
     &:hover {
         @include neumorph.neumorph;
         padding: 5px 2px;
-        border-top: 1px solid $paper--darker;
+        border-top: 1px solid $paper;
         border-bottom: 1px solid $paper--darker;
     }
 

@@ -18,7 +18,7 @@ const ItemCell = ({ book, setModalId }) => {
     return(
         <div className="list-item" onClick={() => setModalId(book.id)}>
                 <h3>{book.title}</h3>
-                <p><i>{book.author}</i></p>
+                <p><em>{book.author}</em></p>
         </div>
     );
 }

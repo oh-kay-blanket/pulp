@@ -10,7 +10,7 @@
     top: 0;
     width: 100vw; /* Full width */
     height: 100vh; /* Full height */
-	background-color: $paper--dark;
+	background-color: $paper;
 
     &.hidden {
         display: none;
@@ -33,7 +33,7 @@
             color: $ink;
 
             &:before {
-                color: $ink;
+                color: $primary;
             }
         }
 

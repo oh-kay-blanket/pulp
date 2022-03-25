@@ -31,7 +31,7 @@ const MainBox = ({ index, book, handleTileClick }) => {
             <img className='img' loading="lazy" alt='' src={book.image}></img>
             <div className='item-info'>
                 <h3 className="main-box-title">{book.title}</h3>
-                <p><i>{book.author}</i></p>
+                <p><em>{book.author}</em></p>
                 {grade}
             </div>
         </div>
