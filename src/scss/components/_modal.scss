@@ -1,5 +1,5 @@
-@use 'abstracts/media' as *;
-@use 'base/var' as *;
+@use '../abstracts/media' as *;
+@use '../base/var' as *;
 
 .modal {
     position: fixed; /* Stay in place */

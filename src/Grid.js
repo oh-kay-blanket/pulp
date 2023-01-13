@@ -22,7 +22,7 @@ const Grid = ({ data, handleTileClick }) => {
 
 
 const MainBox = ({ index, book, handleTileClick }) => {
-    book.image = images[`${book.id}.jpg`];
+    book.image = images[`${book.id}.jpg`].default;
     
     const grade = <p className="grade">{getGrade(book.grade)}</p>;
 

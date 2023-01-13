@@ -4,15 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = { 
   mode: 'development',
-  entry: './src/index.js',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Pulp',
       template: "./src/index.html",
-      filename: "./index.html"
-    }),
-    new HtmlWebpackPlugin({
+      filename: "./index.html",
       favicon: "./src/img/logo.png"
     })
   ],
@@ -22,7 +19,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    static: './dist',
     host: '0.0.0.0'
   },
   module: {

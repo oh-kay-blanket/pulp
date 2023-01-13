@@ -1,7 +1,7 @@
-@use 'abstracts/media' as *;
-@use 'base/base';
-@use 'base/var' as *;
-@use 'mixins/neumorph';
+@use '../abstracts/media' as *;
+@use '../base/base';
+@use '../base/var' as *;
+@use '../mixins/neumorph';
 /* GRID */
 
 .item-grid {
