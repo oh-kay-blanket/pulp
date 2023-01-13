@@ -9,7 +9,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Pulp',
       template: "./src/index.html",
-      filename: "./index.html",
       favicon: "./src/img/logo.png"
     })
   ],
@@ -18,10 +17,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'inline-source-map',
-  devServer: {
-    static: './dist',
-    host: '0.0.0.0'
-  },
   module: {
     rules: [
       {
