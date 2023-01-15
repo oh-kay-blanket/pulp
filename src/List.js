@@ -1,9 +1,9 @@
 import React, {useState } from 'react';
 import { getQuote, getGrade, setModalId } from './AppFunctions.js';
 
-const List = ({ data, modalId, setModalId }) => {
+const List = ({ data, handleTileClick }) => {
 
-    const bookList = data.map((book) => (<ItemCell key={book.id} book={book} setModalId={setModalId} />));
+    const bookList = data.map((book, index) => (<ItemCell key={book.id} book={book} index={index} handleTileClick={handleTileClick} />));
 
     return(
         <div className='item-list'>
@@ -12,11 +12,11 @@ const List = ({ data, modalId, setModalId }) => {
     );
 }
 
-const ItemCell = ({ book, setModalId }) => {
+const ItemCell = ({ index, book, handleTileClick }) => {
 
 
     return(
-        <div className="list-item" onClick={() => setModalId(book.id)}>
+        <div className="list-item" onClick={() => handleTileClick(index)}>
                 <h3>{book.title}</h3>
                 <p><em>{book.author}</em></p>
         </div>

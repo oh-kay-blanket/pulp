@@ -51,7 +51,7 @@ const Modal = ({ data, modalId, slider, handleTileClick }) => {
 
 const ModalCell = ({ book }) => {
 
-    book.image = images[`${book.id}.jpg`].default;
+    book.image = images[`${book.id}.jpg`];
 
     const grade = <span className="grade">{getGrade(book.grade)}</span>;
 
