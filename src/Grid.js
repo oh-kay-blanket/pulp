@@ -1,13 +1,6 @@
 import React, {useState } from 'react';
 import { getGrade } from './AppFunctions.js';
-
-function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-}
-
-const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+import { getBookCover } from './getBookCover';
 
 const Grid = ({ data, handleTileClick }) => {
 
@@ -22,13 +15,13 @@ const Grid = ({ data, handleTileClick }) => {
 
 
 const MainBox = ({ index, book, handleTileClick }) => {
-    book.image = images[`${book.id}.jpg`];
-    
+    const coverSrc = getBookCover(book);
+
     const grade = <p className="grade">{getGrade(book.grade)}</p>;
 
     return(
         <div className='main-box' onClick={() => handleTileClick(index)}>
-            <img className='img' loading="lazy" alt='' src={book.image}></img>
+            <img className='img' loading="lazy" alt={book.title} src={coverSrc}></img>
             <div className='item-info'>
                 <h3 className="main-box-title">{book.title}</h3>
                 <p><em>{book.author}</em></p>

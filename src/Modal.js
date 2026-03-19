@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import { getQuote, getGrade } from './AppFunctions.js';
+import { getBookCover } from './getBookCover';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-// Build 'images' var for development
-function importAll(r) {
-        let images = {};
-        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-        return images;
-    }
-    
-const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 const Modal = ({ data, modalId, slider, handleTileClick }) => {
 
@@ -50,14 +42,13 @@ const Modal = ({ data, modalId, slider, handleTileClick }) => {
 }
 
 const ModalCell = ({ book }) => {
-
-    book.image = images[`${book.id}.jpg`];
+    const coverSrc = getBookCover(book);
 
     const grade = <span className="grade">{getGrade(book.grade)}</span>;
 
     return(
         <div className="modal-cell">
-            <img loading="lazy" alt='' src={book.image}></img>
+            <img loading="lazy" alt={book.title} src={coverSrc}></img>
             <div className="caption">
                 <h2 className="modal__title">{book.title}{book.subtitle && <span className="modal__subtitle">: {book.subtitle}</span>}</h2>
                 <h3 className="modal__author">{book.author}</h3>
