@@ -1,56 +1,60 @@
-import React from 'react';
-import { getGrade } from './AppFunctions.js';
+import React from "react";
+import { getGrade } from "./AppFunctions.js";
 
 const Grid = ({ data, handleTileClick }) => {
+  const bookGrid = data.map((book, index) => (
+    <MainBox
+      key={book.id}
+      book={book}
+      index={index}
+      handleTileClick={handleTileClick}
+    />
+  ));
 
-    const bookGrid = data.map((book, index) => (<MainBox key={book.id} book={book} index={index} handleTileClick={handleTileClick} />));
-    
-    return(
-        <div className='item-grid'>
-            {bookGrid}
-        </div>
-    );
-}
-
+  return <div className="item-grid">{bookGrid}</div>;
+};
 
 const MainBox = ({ index, book, handleTileClick }) => {
-    const grade = <p className="grade">{getGrade(book.grade)}</p>;
+  const grade = <p className="grade">{getGrade(book.grade)}</p>;
 
-    return(
-        <div className='main-box' onClick={() => handleTileClick(index, book.id)}>
-            {book.image ? 
-                <img className='img' loading="lazy" alt='' src={book.image}></img> :
-                <div className="book-placeholder">
-                    <div className="placeholder-title">{book.title}</div>
-                    <div className="placeholder-author">{book.author}</div>
-                </div>
-            }
-            <div className='item-info'>
-                <h3 className="main-box-title">{book.title}</h3>
-                <p><em>{book.author}</em></p>
-                {grade}
-            </div>
+  return (
+    <div className="main-box" onClick={() => handleTileClick(index, book.id)}>
+      {book.image ? (
+        <img className="img" loading="lazy" alt="" src={book.image}></img>
+      ) : (
+        <div className="book-placeholder">
+          <div className="placeholder-title">{book.title}</div>
+          <div className="placeholder-author">{book.author}</div>
         </div>
-    );
-}
+      )}
+      <div className="item-info">
+        <h3 className="main-box-title">{book.title}</h3>
+        <p>
+          <em>{book.author}</em>
+        </p>
+        {grade}
+      </div>
+    </div>
+  );
+};
 
 const GridSkeleton = () => {
-    const items = Array.from({ length: 12 });
-    return (
-        <div className="item-grid skeleton-grid">
-            {items.map((_, i) => {
-                const duration = (Math.random() * 2 + 1).toFixed(2);
-                return (
-                    <div key={i} className="main-box skeleton-box">
-                        <div 
-                            className="skeleton-img" 
-                            style={{ animationDuration: `${duration}s` }}
-                        ></div>
-                    </div>
-                );
-            })}
-        </div>
-    );
+  const items = Array.from({ length: 30 });
+  return (
+    <div className="item-grid skeleton-grid">
+      {items.map((_, i) => {
+        const duration = (Math.random() * 2 + 1).toFixed(2);
+        return (
+          <div key={i} className="main-box skeleton-box">
+            <div
+              className="skeleton-img"
+              style={{ animationDuration: `${duration}s` }}
+            ></div>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Grid;
