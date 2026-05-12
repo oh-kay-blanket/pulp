@@ -1,14 +1,20 @@
-$ink: #444;
-$ink--dry: #444444bb;
-$ink--white: #eee;
+// Ink colors - high contrast but slightly soft
+$ink: #1a1a1a;
+$ink--dry: #333333;
+$ink--washed: #555555;
+$ink--white: #fcfaf4;
 
-$paper: #fcfaf4;
-$paper--light: #f5f3ef;
-$paper--dark: #faf6eb;
-$paper--darker: #d7cec1;
-$paper--shadow: #8c755a;
-$primary: #ed4a49;
-$primary-light: #f9c9b9;
+// Aged Paper palette - yellowed, textured feels
+$paper: #f2e8cf;       // Main background (yellowed paper)
+$paper--light: #fdfaf0; // Fresh page
+$paper--dark: #e7d8b1;  // Aged edge
+$paper--darker: #bcac8a; // Deep shadow/crease
+$paper--shadow: #4a4238; // Heavy depth
 
-$border-radius: 3px;
-$transition: .25s ease;
+// Accent colors - Pulpy red and vintage yellow
+$primary: #bc4749;      // Dried blood / cheap ink red
+$primary-light: #e09f7d;
+$accent: #6a994e;       // Muted vintage green
+
+$border-radius: 2px;    // Sharper, like cut paper
+$transition: .3s cubic-bezier(0.4, 0, 0.2, 1);

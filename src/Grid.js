@@ -1,13 +1,5 @@
-import React, {useState } from 'react';
+import React from 'react';
 import { getGrade } from './AppFunctions.js';
-
-function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-}
-
-const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 const Grid = ({ data, handleTileClick }) => {
 
@@ -22,13 +14,17 @@ const Grid = ({ data, handleTileClick }) => {
 
 
 const MainBox = ({ index, book, handleTileClick }) => {
-    book.image = images[`${book.id}.jpg`];
-    
     const grade = <p className="grade">{getGrade(book.grade)}</p>;
 
     return(
-        <div className='main-box' onClick={() => handleTileClick(index)}>
-            <img className='img' loading="lazy" alt='' src={book.image}></img>
+        <div className='main-box' onClick={() => handleTileClick(index, book.id)}>
+            {book.image ? 
+                <img className='img' loading="lazy" alt='' src={book.image}></img> :
+                <div className="book-placeholder">
+                    <div className="placeholder-title">{book.title}</div>
+                    <div className="placeholder-author">{book.author}</div>
+                </div>
+            }
             <div className='item-info'>
                 <h3 className="main-box-title">{book.title}</h3>
                 <p><em>{book.author}</em></p>
@@ -38,4 +34,24 @@ const MainBox = ({ index, book, handleTileClick }) => {
     );
 }
 
+const GridSkeleton = () => {
+    const items = Array.from({ length: 12 });
+    return (
+        <div className="item-grid skeleton-grid">
+            {items.map((_, i) => {
+                const duration = (Math.random() * 2 + 1).toFixed(2);
+                return (
+                    <div key={i} className="main-box skeleton-box">
+                        <div 
+                            className="skeleton-img" 
+                            style={{ animationDuration: `${duration}s` }}
+                        ></div>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
+
 export default Grid;
+export { GridSkeleton };
