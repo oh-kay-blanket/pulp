@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = { 
   mode: 'development',
@@ -10,23 +11,31 @@ module.exports = {
       title: 'Pulp',
       template: "./src/index.html",
       favicon: "./src/img/logo.png"
-    })
+    }),
+    new Dotenv()
   ],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'inline-source-map',
+  devServer: {
+    proxy: {
+      '/hardcover': {
+        target: 'https://api.hardcover.app',
+        pathRewrite: { '^/hardcover': '' },
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
   module: {
     rules: [
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
           'style-loader',
-          // Translates CSS into CommonJS
           'css-loader',
-          // Compiles Sass to CSS
           'sass-loader',
         ],
       },

@@ -1,114 +1,111 @@
 @use '../abstracts/media';
 @use '../base/var' as *;
-@use '../mixins/neumorph';
-
 
 /* FILTER */
-
-input{
-    font-family: 'Libre Baskerville', serif;
-    margin-left: 0px;
-    padding-left: 0px;
-    color: #222;
-}
-
-i {
-    color: $primary;
-}
-
-.functions-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0px;
-    padding: 10px;
-}
 
 .functions-box {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-    margin: 0px 0px 5px 0px;
-    padding: 10px 10px;
-    font-size: 1rem;
+    justify-content: center;
+    margin: 10px 0 30px;
+    padding: 20px;
+    background-color: rgba($paper--dark, 0.4);
+    border-top: 1px solid $paper--darker;
+    border-bottom: 1px solid $paper--darker;
+    width: 100%; // Span full screen width
+    box-sizing: border-box;
 
     @include media.desktop {
-        justify-content: center;
-        align-items: center;
-        margin: 15px 0px 15px 0px;
-        padding: 20px 50px;
+        padding: 15px 40px;
+        gap: 40px;
     }
 
     select {
-        margin-left: 0px;
-        padding-left: 0px;
-        margin-right: 5px;
+        cursor: pointer;
+        padding: 5px;
         color: $ink;
-        font-weight: bold;
-        font-size: 1rem;
-        border: none;
-        background-color: $paper;
+        font-family: 'Special Elite', cursive;
+        font-size: 1.1rem; // Bigger text
+        border: 1px solid transparent;
+        background: transparent;
+        transition: $transition;
+        
+        &:hover {
+            border-bottom: 1px solid $primary;
+        }
+    }
+
+    i {
+        color: $ink--dry;
+        margin-right: 12px;
+        font-size: 1.2rem; // Bigger icons
     }
 }
 
-// FILTER & SORT BOX
 .filter-box, .sort-box {
-    margin: 5px;
-    background-color: $paper;
+    display: flex;
+    align-items: center;
+    margin: 10px 20px;
 
     p {
-        margin: 5px;
+        margin: 0;
+        display: flex;
+        align-items: center;
     }
 }
 
 .filter-box {
-    padding-right: 10px;
-    text-align: center;
-
     input {
-        background: none;
-        margin-right: 10px;
-        width: 120px;
-        border: 0px;
-        border-bottom: 1px solid;
+        background: transparent;
+        margin-left: 10px;
+        width: 180px; // Wider input
+        border: none;
+        border-bottom: 2px dashed $ink--dry;
+        font-family: 'Libre Baskerville', serif;
+        font-size: 1.1rem;
+        color: $ink;
+        padding: 5px 10px;
 
         &:focus {
             outline: none;
+            border-bottom: 2px solid $primary;
+            background: rgba($paper--light, 0.5);
         }
     }
 }
 
-
 // DISPLAY
 .display-select {
     display: flex;
-
-    @include media.desktop {
-        margin-left: 15px;
-    }
+    border-left: 1px solid $paper--darker;
+    padding-left: 25px;
 
     & > div {
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        margin: 5px;
-        width: 36px;
-        height: 36px;
-        font-size: 1.7rem;
-
-        &:focus {
-            outline: none;
-        }
+        margin: 0 8px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem; // Bigger view icons
+        transition: $transition;
 
         i {
-            color: $primary-light;
+            color: $paper--darker;
         }
 
         &.active {
             i {
-                color: $primary;
+                color: $ink;
+                text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+            }
+        }
+        
+        &:hover:not(.active) {
+            i {
+                color: $ink--dry;
             }
         }
     }

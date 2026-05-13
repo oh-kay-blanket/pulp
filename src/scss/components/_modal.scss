@@ -2,172 +2,246 @@
 @use '../base/var' as *;
 
 .modal {
-    position: fixed; /* Stay in place */
-    display: flex;
-    align-items: center;
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100vw; /* Full width */
-    height: 100vh; /* Full height */
-	background-color: $paper;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($paper--shadow, 0.9);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &.hidden {
         display: none;
     }
 
-    &:hover {
-        cursor: pointer;
-    }
-
     .modal-table {
-    	width: 100vw;
+        width: 95vw;
+        max-width: 1000px;
+        height: 85vh;
+        background-color: $paper;
+        border-radius: $border-radius;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        border: 1px solid $paper--darker;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
 
         @include desktop(medium) {
-                width: 80vw;
-                margin-left: 10vw;
+            width: 90vw;
+            height: 75vh;
         }
 
-        .slick-arrow {
-            color: $ink;
-
-            &:before {
-                color: $primary;
-            }
-        }
-
-        .slick-prev, .slick-next {
-            background-color: transparent !important;
-            z-index: 2;
-            display: none;
-
-            @include desktop(medium) {
-                display: block;
-            }
-
-            &:before {
-                font-size: 2.2rem;
-            }
-        }
-
-        .slick-prev {
-            left: 0;
-        }
-
-        .slick-next {
-            right: 0;
-        }
-
-        .icon {
+        .icon-close {
             position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 30px;
-            height: 30px;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
             color: $ink;
-            z-index: 2;
-            border-radius: 50%;
-            opacity: 1;
-            transition: opacity .25s;
-            z-index: 1;
-
+            font-family: 'Special Elite', cursive;
+            font-size: 1.8rem;
+            z-index: 1200;
+            transition: $transition;
+            line-height: 1;
+            opacity: 0.6;
+            
             &:hover {
-                opacity: .8;
-                transition: opacity .25s;
+                color: $primary;
+                transform: scale(1.1) rotate(5deg);
+                opacity: 1;
             }
+        }
 
-            &.icon-close {
-                top: 15px;
-                right: 20px;
-                
-
-                @include desktop(medium) {
-                    top: 50px;
-                    right: -10px;
-                }
-
-                .fa-times {
-                    font-size: 2rem;
-                }
-            }
+        .slick-slider, .slick-list, .slick-track, .slick-slide > div {
+            height: 100% !important;
         }
 
         .modal-cell {
-            position: relative;
-        	display: flex;
+            outline: none;
+            height: 100%;
+            display: flex !important;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 0px 15px;
-            height: 100vh;
+            overflow-y: auto; // Content scrolls here
+            box-sizing: border-box;
 
-            @include desktop(medium) {
-            	display: flex;
-                flex-direction: row;
-                justify-content: center;
+            // Centering technique that respects overflow
+            .modal-cell-content {
+                margin: auto 0; // Centers vertically only if content is shorter than parent
+                display: flex;
+                flex-direction: column;
                 align-items: center;
+                padding: 40px 15px;
+                width: 100%;
+                box-sizing: border-box;
+
+                @include desktop(medium) {
+                    flex-direction: row;
+                    justify-content: center;
+                    // REMOVED align-items: center from here to fix top cutoff
+                    gap: 40px;
+                    padding: 60px;
+                    min-height: min-content; // Ensures scrolling works from top
+                }
             }
 
-            img {
-                height: 55vw;
-                margin-bottom: 5px;
+            img, .book-placeholder {
+                height: auto;
+                width: 60vw;
+                max-width: 220px;
+                flex-shrink: 0;
+                margin-bottom: 20px;
+                
+                box-shadow: 
+                    2px 2px 0 $paper--dark,
+                    4px 4px 0 $paper--dark,
+                    15px 15px 30px rgba(0,0,0,0.4);
 
-                @include desktop {
-                    height: 55vh;
-                    margin: 0;
+                @include desktop(medium) {
+                    width: 260px;
+                    max-width: none;
+                    margin-bottom: 0;
+                }
+            }
+
+            .book-placeholder {
+                height: 80vw;
+                @include desktop(medium) {
+                    height: 380px;
                 }
             }
 
             /* MODAL TEXT */
             .caption { 
-                box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                height: fit-content;
-                max-height: 45vh;
-                max-width: 80vw;
-                overflow-y: auto;
+                text-align: left;
+                width: 100%;
+                max-width: 450px;
 
-                @include desktop(medium) {
-                    justify-content: center;
-                    max-height: 60vh;
-                    margin-left: 2em;
-                    max-width: 450px;
-                }
+                h2 {
+                    font-family: 'Special Elite', cursive;
+                    font-size: 1.8rem;
+                    color: $ink;
+                    margin: 0 0 5px;
+                    line-height: 1.1;
 
-                h2, h3, h4, p {
-                    // display: block;
-                    margin: 6px 0px 6px;
-                	text-align: left;
-                	color: $ink;
+                    @include desktop {
+                        font-size: 2.2rem;
+                    }
                 }
 
                 .modal__subtitle {
-                    font-weight: 200;
+                    display: block;
+                    font-family: 'Libre Baskerville', serif;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    opacity: 0.8;
                 }
 
                 .modal__author {
-                    font-weight: 400;
-                }
-                
-                .grade {
-                    // opacity: 0.6;
+                    font-size: 1.2rem;
+                    color: $primary;
+                    margin: 10px 0;
+                    font-style: italic;
                 }
 
                 .modal__genre {
-                    font-style: italic;
+                    display: inline-block;
+                    background: $paper--dark;
+                    padding: 3px 10px;
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    margin-bottom: 15px;
+                    border-radius: 20px;
+                    width: fit-content;
+                }
+
+                .meta {
+                    font-size: 0.8rem;
+                    border-top: 1px solid $paper--darker;
+                    padding-top: 10px;
+                    margin-bottom: 10px;
                     color: $ink--dry;
+                    
+                    b { color: $ink; }
+                }
+
+                .modal-rating-line {
+                    margin-bottom: 20px;
+                    
+                    .modal-rating {
+                        margin-left: 0;
+                    }
+                }
+
+                .description {
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    color: $ink;
+                    margin-bottom: 20px;
                 }
              
                 .modal__quote {
+                    position: relative;
+                    padding: 15px 20px;
+                    border-left: 3px solid $paper--darker;
                     font-style: italic;
-                    color: $ink--dry;
+                    color: $ink;
+                    font-size: 0.95rem;
+                    background: rgba($paper--dark, 0.2);
+                    
+                    &::before {
+                        content: '"';
+                        position: absolute;
+                        left: 5px;
+                        top: -10px;
+                        font-family: 'Special Elite', cursive;
+                        font-size: 2.5rem;
+                        opacity: 0.1;
+                    }
                 }
             }
         }
     }
+
+    // Custom Arrows
+    .slick-prev, .slick-next {
+        width: 40px;
+        height: 40px;
+        z-index: 1200;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        
+        &:before { display: none; }
+
+        span {
+            font-family: 'Special Elite', cursive;
+            font-size: 2.5rem;
+            color: $ink;
+            opacity: 0.4;
+            transition: $transition;
+        }
+
+        &:hover span {
+            opacity: 1;
+            color: $primary;
+            transform: scale(1.2);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .slick-prev, .slick-next { display: none !important; }
+    }
+
+    .slick-prev { left: 10px; }
+    .slick-next { right: 10px; }
 }

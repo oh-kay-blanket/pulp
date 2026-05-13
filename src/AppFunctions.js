@@ -14,53 +14,37 @@ const handleFilter = (books, filterType, filterInput) => {
 }
 
 const yrAsc = books => {
-    // sort results
-    books.sort(function(a,b) {
-        return a.published - b.published;
-    });
+    books.sort((a, b) => a.published - b.published);
 }
 
 const yrDsc = books => {
-    // sort results
-    books.sort(function(a,b) {
-        return b.published - a.published;
-    });
+    books.sort((a, b) => b.published - a.published);
 }
 
 const rdAsc = books => {
-    // sort results
-    books.sort(function(a,b) {
+    books.sort((a, b) => {
+        if (a.yearRead !== b.yearRead) {
+            return a.yearRead - b.yearRead;
+        }
         return a.yearOrder - b.yearOrder;
-    });
-
-    books.sort(function(a,b) {
-        return a.yearRead - b.yearRead;
     });
 }
 
 const rdDsc = books => {
-    // sort results
-    books.sort(function(a,b) {
+    books.sort((a, b) => {
+        if (b.yearRead !== a.yearRead) {
+            return b.yearRead - a.yearRead;
+        }
         return b.yearOrder - a.yearOrder;
-    });
-
-    books.sort(function(a,b) {
-        return b.yearRead - a.yearRead;
     });
 }
 
 const grAsc = books => {
-    // sort results
-    books.sort(function(a,b) {
-        return a.grade - b.grade;
-    });
+    books.sort((a, b) => a.grade - b.grade);
 }
 
 const grDsc = books => {
-    // sort results
-    books.sort(function(a,b) {
-        return b.grade - a.grade;
-    });
+    books.sort((a, b) => b.grade - a.grade);
 }
 
 const handleSort = (books, sortDirection) => {
@@ -88,7 +72,41 @@ const handleSort = (books, sortDirection) => {
     }
 }
 
-const getQuote = quote => quote && <p className="modal__quote">"{quote}"</p>;
+const getQuote = quote => {
+    if (!quote) return null;
+    
+    // If it looks like HTML, render it as such
+    if (quote.includes('<') && quote.includes('>')) {
+        return <div className="modal__quote" dangerouslySetInnerHTML={{ __html: quote }} />;
+    }
+    
+    return <p className="modal__quote">"{quote}"</p>;
+};
+
+const getRating = rating => {
+    rating = +rating;
+    if (rating === 0) return null;
+    
+    const icons = [];
+    for (let i = 1; i <= 5; i++) {
+        let iconClass = 'fa-book';
+        let statusClass = 'empty';
+
+        if (rating >= i) {
+            statusClass = 'filled';
+        } else if (rating >= i - 0.5) {
+            statusClass = 'half-filled';
+        }
+
+        icons.push(
+            <i 
+                key={i} 
+                className={`fa ${iconClass} rating-book ${statusClass}`}
+            ></i>
+        );
+    }
+    return <span className="rating-container">{icons}</span>;
+};
 
 const getGrade = grade => {
     grade = +grade;
@@ -106,4 +124,4 @@ const buildModalFunctionality = (setModalId) => {
     });
 }
 
-export { handleFilter, getGrade, getQuote, handleSort, buildModalFunctionality };
+export { handleFilter, getGrade, getRating, getQuote, handleSort, buildModalFunctionality };

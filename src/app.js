@@ -1,77 +1,93 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
-import FunctionsBox from './filter-sort';
-import Grid from './Grid';
-import List from './List';
-import Modal from './Modal';
-import { handleSort, handleFilter, buildModalFunctionality } from './AppFunctions.js';
+import FunctionsBox from "./filter-sort";
+import Grid, { GridSkeleton } from "./Grid";
+import List from "./List";
+import Modal from "./Modal";
+import {
+  handleSort,
+  handleFilter,
+  buildModalFunctionality,
+} from "./AppFunctions.js";
 
-const App = ({ bookList }) => {
+const App = ({ bookList, loading, error }) => {
+  // Set up state
+  const [filterType, setFilterType] = useState("author");
+  const [filterInput, setFilterInput] = useState("");
+  const [sortDirection, setSort] = useState("rd-dsc");
+  const [modalId, setModalId] = useState("");
+  const [gridView, setGridView] = useState(true);
 
-    // Remove books without grades
-    let data = bookList.filter(book => (book.grade !== '')).slice();
+  // Process data if available
+  let data = bookList
+    ? bookList.filter((book) => book.grade !== "").slice()
+    : [];
 
-    // Set up state
-    const [filterType, setFilterType] = useState('author');
-    const [filterInput, setFilterInput] = useState('');
-    const [sortDirection, setSort] = useState('asc');
-    const [modalId, setModalId] = useState('');
-    const [gridView, setGridView] = useState(true);
-    const [currentItems, setCurrentItems] = useState(data);
-    const [pageCount, setPageCount] = useState(0);
-    const [itemOffset, setItemOffset] = useState(0);
-    const itemsPerPage = 40;
+  // Body no scroll on modal
+  useEffect(() => {
+    if (modalId !== "") {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+    return () => document.body.classList.remove("modal-open");
+  }, [modalId]);
 
-    // Body no scroll on modal
-    modalId === '' ? document.body.classList.remove('modal-open') : document.body.classList.add('modal-open');
-
-    // Run filter & sort
+  // Run filter & sort if not loading
+  if (!loading && bookList) {
     data = handleFilter(data, filterType, filterInput);
     handleSort(data, sortDirection);
+  }
 
-    // Modal listener
-    buildModalFunctionality(setModalId);
+  // Modal listener
+  buildModalFunctionality(setModalId);
 
-    // Slick ref
-    const slider = useRef(null);
-    
-    // Open Modal
-    function handleTileClick(index, id) {
-        setModalId(id);
-        slider.current.slickGoTo(index, true);
+  // Slick ref
+  const slider = useRef(null);
+
+  // Open Modal
+  function handleTileClick(index, id = "open") {
+    if (loading) return;
+    setModalId(id);
+    if (slider.current) {
+      slider.current.slickGoTo(index, true);
     }
+  }
 
-    return(
-        <>
-            <h1>pulp</h1>
-            <FunctionsBox
-                filterType={filterType}
-                setFilterType={setFilterType}
-                filterInput={filterInput}
-                setFilterInput={setFilterInput}
-                sortDirection={sortDirection}
-                setSort={setSort}
-                gridView={gridView}
-                setGridView={setGridView}
-            />
-            {gridView ?
-                <Grid
-                    data={data}
-                    handleTileClick={handleTileClick}
-                /> :
-                <List
-                    data={data}
-                    handleTileClick={handleTileClick}
-                />
-            }
-            <Modal
-                data={data}
-                slider={slider}
-                handleTileClick={handleTileClick}
-                modalId={modalId}
-            />
-        </>
-    )
-}
+  return (
+    <>
+      <h1>Pulp.</h1>
+      <FunctionsBox
+        filterType={filterType}
+        setFilterType={setFilterType}
+        filterInput={filterInput}
+        setFilterInput={setFilterInput}
+        sortDirection={sortDirection}
+        setSort={setSort}
+        gridView={gridView}
+        setGridView={setGridView}
+      />
+
+      {error && <div className="error-message">{error}</div>}
+
+      {loading ? (
+        <GridSkeleton />
+      ) : gridView ? (
+        <Grid data={data} handleTileClick={handleTileClick} />
+      ) : (
+        <List data={data} handleTileClick={handleTileClick} />
+      )}
+
+      {!loading && data.length > 0 && (
+        <Modal
+          data={data}
+          slider={slider}
+          handleTileClick={handleTileClick}
+          modalId={modalId}
+        />
+      )}
+    </>
+  );
+};
 
 export default App;

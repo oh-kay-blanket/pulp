@@ -16,7 +16,7 @@ const ItemCell = ({ index, book, handleTileClick }) => {
 
 
     return(
-        <div className="list-item" onClick={() => handleTileClick(index)}>
+        <div className="list-item" onClick={() => handleTileClick(index, book.id)}>
                 <h3>{book.title}</h3>
                 <p><em>{book.author}</em></p>
         </div>
