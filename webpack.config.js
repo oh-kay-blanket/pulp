@@ -21,11 +21,13 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     proxy: {
-      '/hardcover': {
+      '/v1': {
         target: 'https://api.hardcover.app',
-        pathRewrite: { '^/hardcover': '' },
         changeOrigin: true,
         secure: false,
+        headers: {
+          'Connection': 'keep-alive'
+        }
       },
     },
   },
