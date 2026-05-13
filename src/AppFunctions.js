@@ -83,6 +83,31 @@ const getQuote = quote => {
     return <p className="modal__quote">"{quote}"</p>;
 };
 
+const getRating = rating => {
+    rating = +rating;
+    if (rating === 0) return null;
+    
+    const icons = [];
+    for (let i = 1; i <= 5; i++) {
+        let iconClass = 'fa-book';
+        let statusClass = 'empty';
+
+        if (rating >= i) {
+            statusClass = 'filled';
+        } else if (rating >= i - 0.5) {
+            statusClass = 'half-filled';
+        }
+
+        icons.push(
+            <i 
+                key={i} 
+                className={`fa ${iconClass} rating-book ${statusClass}`}
+            ></i>
+        );
+    }
+    return <span className="rating-container">{icons}</span>;
+};
+
 const getGrade = grade => {
     grade = +grade;
     return (grade === 0 ? '' : grade.toPrecision(2))
@@ -99,4 +124,4 @@ const buildModalFunctionality = (setModalId) => {
     });
 }
 
-export { handleFilter, getGrade, getQuote, handleSort, buildModalFunctionality };
+export { handleFilter, getGrade, getRating, getQuote, handleSort, buildModalFunctionality };

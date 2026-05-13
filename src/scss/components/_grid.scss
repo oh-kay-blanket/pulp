@@ -1,88 +1,10 @@
-@use "../abstracts/media" as *;
-@use "../base/base";
-@use "../base/var" as *;
-@use "../mixins/neumorph";
+@use '../abstracts/media' as *;
+@use '../base/base';
+@use '../base/var' as *;
+@use '../mixins/neumorph';
 
-/* GRID */
-
-.item-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px auto;
-  justify-content: center;
-  grid-auto-flow: dense;
-  padding-bottom: 50px;
-
-  @include desktop {
-    max-width: 95%;
-  }
-
-  .main-box {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4% 2%;
-    width: 32vw;
-    cursor: pointer;
-    transition: transform $transition;
-
-    @include desktop {
-      width: 180px;
-      margin: 2% 1%;
-
-      &:hover {
-        transform: translateY(-5px) scale(1.02);
-
-        .img,
-        .book-placeholder {
-          box-shadow:
-            2px 2px 0 $paper--darker,
-            4px 4px 0 $paper--darker,
-            8px 8px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .item-info {
-          opacity: 0.98;
-          transform: scale(1.05);
-        }
-      }
-    }
-
-    h2,
-    h3,
-    h4,
-    p {
-      margin: 0px;
-    }
-  }
-
-  .img,
-  .book-placeholder {
-    background-size: cover;
-    display: block;
-    margin: auto;
-    transition: $transition;
-    border-radius: $border-radius;
-    height: 48vw;
-    width: 32vw;
-    object-fit: cover;
-
-    // Physical page stack effect
-    background-color: $paper--light;
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow:
-      1px 1px 0 $paper--dark,
-      2px 2px 0 $paper--dark,
-      3px 3px 6px rgba(0, 0, 0, 0.25);
-
-    @include desktop {
-      height: 260px;
-      width: 180px;
-    }
-  }
-
-  .book-placeholder {
+/* SHARED BOOK STYLING */
+.book-placeholder {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -90,93 +12,175 @@
     text-align: center;
     background-color: #e0ba75;
     border: 1px solid $paper--darker;
-
+    box-sizing: border-box;
+    
     .placeholder-title {
-      font-family: "Special Elite", cursive;
-      font-size: 0.9rem;
-      line-height: 1.2;
-      color: $ink;
-      text-transform: uppercase;
+        font-family: 'Special Elite', cursive;
+        font-size: 0.9rem;
+        line-height: 1.2;
+        color: $ink;
+        text-transform: uppercase;
     }
 
     .placeholder-author {
-      font-family: "Libre Baskerville", serif;
-      font-size: 0.7rem;
-      font-style: italic;
-      color: $primary;
+        font-family: 'Libre Baskerville', serif;
+        font-size: 0.7rem;
+        font-style: italic;
+        color: $primary;
     }
-  }
+}
 
-  /* Skeleton Loading */
-  .skeleton-box {
-    cursor: default;
-    pointer-events: none;
-  }
+/* GRID */
 
-  .skeleton-img {
-    background-color: $paper--dark;
-    border-radius: $border-radius;
-    height: 48vw;
-    width: 32vw;
-    animation: pulse 1.5s infinite ease-in-out;
+.item-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    justify-content: center;
+    grid-auto-flow: dense;
+    padding-bottom: 50px;
 
     @include desktop {
-      height: 260px;
-      width: 180px;
+        max-width: 95%;
     }
-  }
+    
+    .main-box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4% 2%;
+        width: 32vw;
+        cursor: pointer;
+        transition: transform $transition;
+
+        @include desktop {
+            width: 180px;
+            margin: 2% 1%;
+    
+            &:hover {
+                transform: translateY(-5px) scale(1.02);
+
+                .img, .book-placeholder {
+                    box-shadow: 
+                        2px 2px 0 $paper--darker,
+                        4px 4px 0 $paper--darker,
+                        8px 8px 15px rgba(0,0,0,0.3);
+                }
+    
+                .item-info {
+                    opacity: 0.98;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    
+        h2, h3, h4, p {
+            margin: 0px;
+        }
+    }
+
+    .img, .book-placeholder {
+        background-size: cover;
+        margin: auto;
+        transition: $transition;
+        border-radius: $border-radius;
+        height: 48vw;
+        width: 32vw;
+        object-fit: cover;
+        
+        // Physical page stack effect
+        border-left: 2px solid rgba(0,0,0,0.1);
+        box-shadow: 
+            1px 1px 0 $paper--dark,
+            2px 2px 0 $paper--dark,
+            3px 3px 6px rgba(0,0,0,0.25);
+        
+        @include desktop {
+            height: 260px;
+            width: 180px;
+        }
+    }
+
+    .img {
+        display: block;
+        background-color: $paper--light;
+    }
+
+    .book-placeholder {
+        display: flex;
+    }
+
+    /* Skeleton Loading */
+    .skeleton-box {
+        cursor: default;
+        pointer-events: none;
+    }
+
+    .skeleton-img {
+        background-color: $paper--dark;
+        border-radius: $border-radius;
+        height: 48vw;
+        width: 32vw;
+        animation: pulse 1.5s infinite ease-in-out;
+
+        @include desktop {
+            height: 260px;
+            width: 180px;
+        }
+    }
 }
 
 @keyframes pulse {
-  0% {
-    opacity: 0.4;
-    background-color: $paper--dark;
-  }
-  50% {
-    opacity: 1;
-    background-color: $paper--darker;
-  }
-  100% {
-    opacity: 0.4;
-    background-color: $paper--dark;
-  }
+    0% { 
+        opacity: 0.4; 
+        background-color: $paper--dark; 
+    }
+    50% { 
+        opacity: 1; 
+        background-color: $paper--darker; 
+    }
+    100% { 
+        opacity: 0.4; 
+        background-color: $paper--dark; 
+    }
 }
 
 .item-info {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  background-color: rgba($paper--light, 0.95);
-  transition: all $transition;
-  padding: 15px;
-  border-radius: $border-radius;
-  text-align: center;
-  z-index: 2;
-  pointer-events: none;
+    position: absolute;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba($paper--light, 0.95);
+    transition: all $transition;
+    padding: 15px;
+    border-radius: $border-radius;
+    text-align: center;
+    z-index: 2;
+    pointer-events: none;
 
-  h3 {
-    font-family: "Special Elite", cursive;
-    color: $ink;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
+    h3 {
+        font-family: 'Special Elite', cursive;
+        color: $ink;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
 
-  p {
-    font-size: 0.8rem;
-    margin-bottom: 5px;
-  }
-
-  .grade {
-    color: $primary;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
+    .grade {
+        color: $primary;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
 }

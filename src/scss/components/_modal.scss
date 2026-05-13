@@ -21,7 +21,7 @@
     .modal-table {
         width: 95vw;
         max-width: 1000px;
-        height: 85vh; // Fixed height relative to viewport
+        height: 85vh;
         background-color: $paper;
         border-radius: $border-radius;
         box-shadow: 0 30px 60px rgba(0,0,0,0.6);
@@ -33,7 +33,7 @@
 
         @include desktop(medium) {
             width: 90vw;
-            height: 75vh; // Slightly shorter on desktop
+            height: 75vh;
         }
 
         .icon-close {
@@ -56,32 +56,36 @@
             }
         }
 
-        // Slick container overrides - Force it to fill the fixed height
-        .slick-slider {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .slick-list, .slick-track {
+        .slick-slider, .slick-list, .slick-track, .slick-slide > div {
             height: 100% !important;
         }
 
         .modal-cell {
             outline: none;
-            height: 100%; // Fill the slider
+            height: 100%;
             display: flex !important;
             flex-direction: column;
-            align-items: center;
-            padding: 40px 15px;
-            overflow-y: auto; // Internal scroll for the whole cell content
+            overflow-y: auto; // Content scrolls here
+            box-sizing: border-box;
 
-            @include desktop(medium) {
-                flex-direction: row;
-                justify-content: center;
-                align-items: flex-start;
-                gap: 40px;
-                padding: 60px;
+            // Centering technique that respects overflow
+            .modal-cell-content {
+                margin: auto 0; // Centers vertically only if content is shorter than parent
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 15px;
+                width: 100%;
+                box-sizing: border-box;
+
+                @include desktop(medium) {
+                    flex-direction: row;
+                    justify-content: center;
+                    // REMOVED align-items: center from here to fix top cutoff
+                    gap: 40px;
+                    padding: 60px;
+                    min-height: min-content; // Ensures scrolling works from top
+                }
             }
 
             img, .book-placeholder {
@@ -100,8 +104,13 @@
                     width: 260px;
                     max-width: none;
                     margin-bottom: 0;
-                    position: sticky;
-                    top: 0;
+                }
+            }
+
+            .book-placeholder {
+                height: 80vw;
+                @include desktop(medium) {
+                    height: 380px;
                 }
             }
 
@@ -156,13 +165,17 @@
                     font-size: 0.8rem;
                     border-top: 1px solid $paper--darker;
                     padding-top: 10px;
-                    margin-bottom: 15px;
+                    margin-bottom: 10px;
                     color: $ink--dry;
                     
                     b { color: $ink; }
-                    .grade { 
-                        color: $primary; 
-                        font-weight: bold;
+                }
+
+                .modal-rating-line {
+                    margin-bottom: 20px;
+                    
+                    .modal-rating {
+                        margin-left: 0;
                     }
                 }
 

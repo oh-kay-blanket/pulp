@@ -1,84 +1,139 @@
-@use "./var" as *;
-@use "../abstracts/media";
+@use './var' as *;
+@use '../abstracts/media';
 
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap');
 
 body {
-  box-sizing: border-box;
-  margin: 0px;
-  font-family: "Libre Baskerville", serif;
-  font-size: 1em;
-  line-height: 1.6;
-  color: $ink;
-  background-color: $paper;
-  position: relative;
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: $ink; 
+    background-color: $paper;
 
-  &.modal-open {
-    overflow: hidden;
-  }
+    &.modal-open {
+        overflow: hidden;
+        height: 100vh;
+    }
 }
 
 #root {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-
-  // The Grainy Texture Overlay - Moved behind content
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
+    min-height: 100vh;
     width: 100%;
-    height: 100%;
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 0; // Behind everything in #root
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  }
+    overflow-x: hidden;
+
+    // The Grainy Texture Overlay - Now scrolls with page
+    &::before {
+        content: "";
+        position: absolute; // Changed from fixed to scroll with page
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
 }
 
-input,
-select {
-  font-family: "Libre Baskerville", serif;
-  font-size: 0.9em;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid $ink--dry;
-  color: $ink;
-  padding: 5px;
-  position: relative;
-  z-index: 1;
+input, select {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.9em;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $ink--dry;
+    color: $ink;
+    padding: 5px;
+    position: relative;
+    z-index: 1;
 
-  &:focus {
-    outline: none;
-    border-bottom-color: $primary;
-  }
+    &:focus {
+        outline: none;
+        border-bottom-color: $primary;
+    }
+
+    &::placeholder {
+        font-family: 'Special Elite', cursive;
+        opacity: 0.5;
+        font-size: 0.8rem;
+    }
 }
 
 h1 {
-  margin: 0px auto;
-  padding: 1rem 0;
-  font-family: "Special Elite", system-ui;
-  font-size: 4em;
-  font-weight: 400;
-  text-align: center;
-  color: $ink;
-  letter-spacing: -2px;
-  transform: rotate(-1deg);
-  position: relative;
-  z-index: 1;
+    margin: 0px auto;
+    padding: 1.5rem 0 0.5rem;
+    font-family: 'Special Elite', system-ui;
+    font-size: 4.5em;
+    font-weight: 400;
+    text-align: center;
+    color: $ink;
+    letter-spacing: -2px;
+    transform: rotate(-0.5deg);
+    position: relative;
+    z-index: 1;
 
-  @include media.desktop {
-    font-size: 8em;
-  }
+    @include media.desktop {
+        font-size: 9em;
+    }
 }
 
 // Global "Paper Stack" effect
 .paper-stack {
-  background: $paper--light;
-  box-shadow:
-    1px 1px 0 $paper--dark,
-    2px 2px 0 $paper--dark,
-    3px 3px 5px rgba(0, 0, 0, 0.2);
+    background: $paper--light;
+    box-shadow: 
+        1px 1px 0 $paper--dark,
+        2px 2px 0 $paper--dark,
+        3px 3px 5px rgba(0,0,0,0.2);
 }
+
+// RATING BOOKS
+.rating-container {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.rating-book {
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    position: relative;
+    display: inline-block;
+    width: 1.1em;
+    text-align: center;
+
+    &.filled {
+        color: $primary;
+        opacity: 1;
+    }
+
+    &.half-filled {
+        // Half filled effect using gradient
+        background: linear-gradient(90deg, $primary 50%, $paper--darker 50%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        opacity: 1;
+    }
+
+    &.empty {
+        color: $paper--darker;
+        opacity: 0.4;
+    }
+}
+
+.modal-rating {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    
+    .rating-book {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+

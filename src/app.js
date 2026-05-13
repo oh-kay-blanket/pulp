@@ -24,9 +24,14 @@ const App = ({ bookList, loading, error }) => {
     : [];
 
   // Body no scroll on modal
-  modalId === ""
-    ? document.body.classList.remove("modal-open")
-    : document.body.classList.add("modal-open");
+  useEffect(() => {
+    if (modalId !== "") {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+    return () => document.body.classList.remove("modal-open");
+  }, [modalId]);
 
   // Run filter & sort if not loading
   if (!loading && bookList) {
