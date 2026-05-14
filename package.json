@@ -41,7 +41,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "fetch-books": "node scripts/fetch-books.js",
     "start": "npm run fetch-books && NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --open",
-    "build": "npm run fetch-books && NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
+    "build": "npm run fetch-books && NODE_OPTIONS=--openssl-legacy-provider webpack --mode production && mkdir -p dist/img/books && cp -r src/img/books/* dist/img/books/ && cp CNAME dist/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

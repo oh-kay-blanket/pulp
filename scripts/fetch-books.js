@@ -65,6 +65,39 @@ async function fetchGraphQL(query, variables = {}) {
     return response.data.data;
 }
 
+async function downloadImage(url, filename) {
+    const imagesDir = path.resolve(__dirname, '../src/img/books');
+    if (!fs.existsSync(imagesDir)) {
+        fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    const filePath = path.join(imagesDir, filename);
+    
+    // Skip if already exists
+    if (fs.existsSync(filePath)) {
+        return `img/books/${filename}`;
+    }
+
+    try {
+        const response = await axios({
+            url,
+            method: 'GET',
+            responseType: 'stream'
+        });
+
+        const writer = fs.createWriteStream(filePath);
+        response.data.pipe(writer);
+
+        return new Promise((resolve, reject) => {
+            writer.on('finish', () => resolve(`img/books/${filename}`));
+            writer.on('error', reject);
+        });
+    } catch (err) {
+        console.error(`Failed to download image ${url}:`, err.message);
+        return url; // Fallback to original URL
+    }
+}
+
 async function run() {
     try {
         console.log('Fetching user ID...');
@@ -76,22 +109,39 @@ async function run() {
         console.log(`Fetching books for user ${userId}...`);
         const booksData = await fetchGraphQL(booksQuery, { userId });
         
-        const books = booksData.user_books.map((ub, index) => ({
-            id: ub.book?.id?.toString() || index.toString(),
-            title: ub.book?.title || 'Unknown Title',
-            subtitle: ub.book?.subtitle || '',
-            author: ub.book?.contributions?.[0]?.author?.name || 'Unknown Author',
-            grade: ub.rating ? ub.rating.toString() : '',
-            image: ub.book?.image?.url || '',
-            description: ub.book?.description || '',
-            yearRead: ub.last_read_date ? new Date(ub.last_read_date).getFullYear().toString() : '',
-            yearOrder: index.toString(),
-            published: ub.book?.release_date ? new Date(ub.book.release_date).getFullYear().toString() : '',
-            genre: ub.book?.taggable_counts?.[0]?.tag?.tag || '',
-            quote: ub.review || ''
-        }));
+        console.log(`Successfully fetched ${booksData.user_books.length} books. Downloading images...`);
 
-        console.log(`Successfully fetched ${books.length} books.`);
+        const books = [];
+        for (let i = 0; i < booksData.user_books.length; i++) {
+            const ub = booksData.user_books[i];
+            const imageUrl = ub.book?.image?.url;
+            let localImage = imageUrl;
+
+            if (imageUrl) {
+                const extension = path.extname(new URL(imageUrl).pathname) || '.jpg';
+                const filename = `${ub.book.id}${extension}`;
+                localImage = await downloadImage(imageUrl, filename);
+            }
+
+            books.push({
+                id: ub.book?.id?.toString() || i.toString(),
+                title: ub.book?.title || 'Unknown Title',
+                subtitle: ub.book?.subtitle || '',
+                author: ub.book?.contributions?.[0]?.author?.name || 'Unknown Author',
+                grade: ub.rating ? ub.rating.toString() : '',
+                image: localImage,
+                description: ub.book?.description || '',
+                yearRead: ub.last_read_date ? new Date(ub.last_read_date).getFullYear().toString() : '',
+                yearOrder: i.toString(),
+                published: ub.book?.release_date ? new Date(ub.book.release_date).getFullYear().toString() : '',
+                genre: ub.book?.taggable_counts?.[0]?.tag?.tag || '',
+                quote: ub.review || ''
+            });
+
+            if ((i + 1) % 10 === 0) {
+                console.log(`Processed ${i + 1}/${booksData.user_books.length} books...`);
+            }
+        }
         
         const outputPath = path.resolve(__dirname, '../src/books.json');
         fs.writeFileSync(outputPath, JSON.stringify(books, null, 2));
